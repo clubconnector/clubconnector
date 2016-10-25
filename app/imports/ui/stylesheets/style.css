@@ -1,0 +1,30 @@
+body {
+
+}
+
+.ui.fluid.banner.image {
+
+}
+
+#menu {
+  margin: 0px;
+  margin-bottom: 30px;
+  border-radius: 0px;
+  background-color: #FC143A;
+  color: white;
+}
+
+#login-buttons a, .accounts-dialog a {
+  color: white;
+}
+
+.ui.celled.table {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#footer {
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+

@@ -1,0 +1,10 @@
+<template name="Header">
+  <img class="ui fluid banner image" src="/images/digits-header-narrower.jpg">
+  <div id="menu" class="ui borderless inverted menu">
+    <div class="ui container">
+      <a class="item" href="{{pathFor 'Home_Page'}}"><h1>digits</h1></a>
+      <a class="{{ isActiveRoute 'Add_Contact_Page'}} item" href="{{ pathFor 'Add_Contact_Page' }}">Add Contact</a>
+      <a href="#" class="item">{{> loginButtons }} </a>
+    </div>
+  </div>
+</template>
