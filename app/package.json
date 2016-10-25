@@ -1,5 +1,5 @@
 {
-  "name": "digits",
+  "name": "Club Hub",
   "private": true,
   "scripts": {
     "start": "meteor --settings ../config/settings.development.json",
