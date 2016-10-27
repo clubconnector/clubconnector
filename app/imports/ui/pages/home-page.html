@@ -1,36 +1,16 @@
 <template name="Home_Page">
-  <div class="ui container">
 
-    {{#if Template.subscriptionsReady}}
-      <table class="ui celled table">
-        <thead>
-        <tr>
-          <th>First</th>
-          <th>Last</th>
-          <th>Address</th>
-          <th>Home</th>
-          <th>Email</th>
-          <th>Edit</th>
-        </tr>
-        </thead>
+  <div class="image-background">
+    <div class="ui container colorblocktop">
+      <div class="ui centered two column grid">
+        <div class="main column">
 
-        <tbody>
-        {{#each contact in contactsList}}
-          <tr>
-            <td>{{contact.first}}</td>
-            <td>{{contact.last}}</td>
-            <td>{{contact.address}}</td>
-            <td>{{contact.telephone}}</td>
-            <td>{{contact.email}}</td>
-            <td><a href="{{pathFor 'Edit_Contact_Page' _id=contact._id}}">Edit</a></td>
-
-          </tr>
-        {{/each}}
-        </tbody>
-      </table>
-    {{else}}
-      {{> Loading}}
-    {{/if}}
-
+        </div>
+        <div class="main column">
+          <h1>Find people who like what you like.</h1>
+        </div>
+      </div>
+    </div>
   </div>
+
 </template>

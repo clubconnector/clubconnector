@@ -1,10 +1,27 @@
 <template name="Header">
-  <img class="ui fluid banner image" src="/images/UHM_banner.png">
-  <div id="menu" class="ui borderless inverted menu">
+  <div class="ui borderless topmenu github menu">
     <div class="ui container">
-      <a class="item" href="{{pathFor 'Home_Page'}}"><h1>Club Hub</h1></a>
+
+      <img class="ui image item"
+           src="/images/uhm_title_small.png">
+
+      <div class="right menu">
+        <div class="item">
+          <div class="ui icon input">
+            <input type="text" placeholder="Search...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="menu" class="ui inverted menu">
+    <div class="ui container">
+      <a class="item" href="{{pathFor 'Home_Page'}}"><h1>ClubHub</h1></a>
       <a class="{{ isActiveRoute 'Add_Contact_Page'}} item" href="{{ pathFor 'Add_Contact_Page' }}">Add Contact</a>
-      <a href="#" class="item">{{> loginButtons }} </a>
+      <a href="#" class="right item">{{> loginButtons }} </a>
     </div>
   </div>
 </template>
