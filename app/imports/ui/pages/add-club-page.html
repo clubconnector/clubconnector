@@ -1,0 +1,90 @@
+<template name="Add_Club_Page">
+  <div class="ui container">
+    <form class="ui form club-data-form {{ errorClass }}">
+      <h4 class="ui dividing header">Add Club</h4>
+
+      <div class="field">
+        <label>Type</label>
+        <div class="ui selection dropdown">
+          <input type="hidden" name="type">
+          <i class="dropdown icon"></i>
+          <div class="default text">Type</div>
+          <div class="menu">
+            <div class="item" data-value="0">Academic/Professional</div>
+            <div class="item" data-value="1">Ethnic/Cultural</div>
+            <div class="item" data-value="2">Fraternity/Sorority</div>
+            <div class="item" data-value="3">Honorary Society</div>
+            <div class="item" data-value="4">Leisure/Recreational</div>
+            <div class="item" data-value="5">Political</div>
+            <div class="item" data-value="6">Religious/Spiritual</div>
+            <div class="item" data-value="7">Service</div>
+            <div class="item" data-value="8">Sports/Leisure</div>
+            <div class="item" data-value="9">Student Affairs</div>
+          </div>
+          {{#if displayFieldError 'type' }}
+            <div class="ui error message">
+              <p>You must specify the club type.</p>
+            </div>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Name and Acronym</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="orgName" id="orgName" placeholder="Name of Organization">
+            {{#if displayFieldError 'orgName' }}
+              <div class="ui error message">
+                <p>You must specify the club name.</p>
+              </div>
+            {{/if}}
+          </div>
+          <div class="field">
+            <input type="text" name="acronym" id="acronym" placeholder="Acronym">
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Contact Person</label>
+        <div class="two fields">
+          <div class="field">
+            <input type="text" name="contactName" id="contactName" placeholder="Name">
+            {{#if displayFieldError 'contactName' }}
+              <div class="ui error message">
+                <p>You must specify the contact person's name.</p>
+              </div>
+            {{/if}}
+          </div>
+          <div class="field">
+            <input type="text" name="contactEmail" id="contactEmail" placeholder="Email">
+            {{#if displayFieldError 'contactEmail' }}
+              <div class="ui error message">
+                <p>You must specify the contact person's email.</p>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Club Email, Website, & Social Media</label>
+        <div class="three fields">
+          <div class="field">
+            <input type="text" name="orgEmail" id="orgEmail" placeholder="Email">
+          </div>
+          <div class="field">
+            <input type="text" name="orgWebsite" id="orgWebsite" placeholder="Website">
+          </div>
+          <div class="field">
+            <input type="text" name="orgSocial" id="orgSocial" placeholder="Social Media">
+          </div>
+        </div>
+      </div>
+
+      <button class="ui button" type="submit">Submit</button>
+
+    </form>
+  </div>
+</template>

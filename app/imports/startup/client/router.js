@@ -8,17 +8,24 @@ FlowRouter.route('/', {
   },
 });
 
-FlowRouter.route('/add-contact', {
-  name: 'Add_Contact_Page',
+FlowRouter.route('/browse-clubs', {
+  name: 'Browse_Clubs_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Add_Contact_Page' });
+    BlazeLayout.render('App_Body', { main: 'Browse_Clubs_Page' });
   },
 });
 
-FlowRouter.route('/edit-contact/:_id', {
-  name: 'Edit_Contact_Page',
+FlowRouter.route('/add-club', {
+  name: 'Add_Club_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Edit_Contact_Page' });
+    BlazeLayout.render('App_Body', { main: 'Add_Club_Page' });
+  },
+});
+
+FlowRouter.route('/edit-club/123', {
+  name: 'Edit_Club_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Edit_Club_Page' });
   },
 });
 

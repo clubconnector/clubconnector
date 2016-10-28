@@ -1,6 +1,6 @@
-import { Contacts } from '../../api/contacts/contacts.js';
+import { Clubs } from '../../api/clubs/clubs.js';
 import { Meteor } from 'meteor/meteor';
 
-Meteor.publish('Contacts', function publishContactsData() {
-  return Contacts.find();
+Meteor.publish('Clubs', function publishClubsData() {
+  return Clubs.find();
 });

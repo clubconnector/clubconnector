@@ -12,7 +12,7 @@
 #menu {
   z-index: 2;
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   border-radius: 0;
   background-color: #1a1a1a;
   color: white;
@@ -21,6 +21,10 @@
 
 #login-buttons a, .accounts-dialog a {
   color: white;
+}
+
+.login-close-text {
+  color: black;
 }
 
 .image-background {
@@ -32,16 +36,26 @@
 
 .main.column{
   position: relative;
-  top: 50%;
-  transform: 			translateY(50%);
+  top: 100%;
+  transform: 			translateY(140%);
 }
 
-.main.column p{
+.main.column h1{
   padding: 50px;
   text-align: left;
-  position: relative;
-  top: 50%;
-  transform: 			translateY(50%);
+  opacity: 1; !important
+  z-index: 3;
+}
+
+#sloganColumn {
+  background-color: rgb(11, 33, 31);
+  background-color: rgba(11, 33, 31, 0.5);
+  border-radius: 25px;
+}
+
+form.ui.form.club-data-form {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .ui.celled.table {
