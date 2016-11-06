@@ -9,3 +9,7 @@ import './browse-clubs-page.js';
 
 import './home-page.html';
 import './home-page.js';
+
+
+import './cas-login.html';
+import './cas-login.js';
