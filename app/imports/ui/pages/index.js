@@ -9,3 +9,6 @@ import './browse-clubs-page.js';
 
 import './home-page.html';
 import './home-page.js';
+
+import './user-home_page.html';
+import './user-home_page.js';
