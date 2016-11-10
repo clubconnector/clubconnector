@@ -20,27 +20,13 @@
   <div id="menu" class="ui inverted menu">
 
     <div class="ui container">
-<<<<<<< HEAD
 
-      <a class="item" href="{{pathFor 'Home_Page'}}"><h1>ClubConnector</h1></a>
-      <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse Clubs</a>
-      <a class="{{ isActiveRoute 'Add_Club_Page'}} item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
-      <a class="{{ isActiveRoute 'Edit_Club_Page'}} item" href="{{ pathFor 'Edit_Club_Page' }}">Edit Club</a>
-      <a href="#" class="borderless item"></a>
-      <a href="#" class="borderless item"></a>
-      <a href="#" class="borderless item"></a>
-      <a href="#" class="borderless item"></a>
-      {{#if currentUser}}
-      <a class="right {{ isActiveRoute 'User_Home_Page'}} item" href="{{ pathFor 'User_Home_Page' }}">User Home Page</a>
-      {{/if}}
-      <a id="menuLoginButton" href="#" class="right item">{{> loginButtons }} </a>
-=======
       <a class="ui borderless item" href="{{pathFor 'Home_Page'}}"><h1>ClubConnector</h1></a>
       <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui borderless item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse Clubs</a>
       <a class="{{ isActiveRoute 'Add_Club_Page'}} ui borderless item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
       <a class="{{ isActiveRoute 'Edit_Club_Page'}} ui borderless item" href="{{ pathFor 'Edit_Club_Page' }}">Edit Club</a>
       {{> Cas_Login }}
->>>>>>> master
+
     </div>
 
 

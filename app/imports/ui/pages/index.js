@@ -10,11 +10,7 @@ import './browse-clubs-page.js';
 import './home-page.html';
 import './home-page.js';
 
-<<<<<<< HEAD
-import './user-home_page.html';
-import './user-home_page.js';
-=======
-
 import './cas-login.html';
 import './cas-login.js';
->>>>>>> master
+
+
