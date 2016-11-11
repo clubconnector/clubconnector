@@ -12,3 +12,6 @@ import './home-page.js';
 
 import './profile-page.html';
 import './profile-page.js';
+
+import './cas-login.html';
+import './cas-login.js';
