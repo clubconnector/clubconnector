@@ -1,0 +1,7 @@
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://clubteam:123456@ds151137.mlab.com:51137/clubconnector"
+    }
+  }
+}
