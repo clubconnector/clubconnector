@@ -40,7 +40,6 @@ FlowRouter.route('/profile/', {
   name: 'Profile_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Profile_Page' });
-
   },
 });
 
