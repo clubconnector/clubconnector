@@ -21,4 +21,3 @@ import './profile-page.js';
 
 import './landing-page.html';
 import './landing-page.js';
-
