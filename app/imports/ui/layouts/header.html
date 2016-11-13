@@ -1,5 +1,7 @@
 <template name="Header">
+
   <div class="ui borderless topmenu github menu">
+
     <div class="ui container">
 
       <img class="ui image item"
@@ -13,25 +15,28 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
+
 
   <div id="menu" class="ui inverted menu">
 
     <div class="ui container">
 
       <a class="ui borderless item" href="{{pathFor 'Home_Page'}}"><h1>ClubConnector</h1></a>
+      {{#if currentUser}}
       <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui borderless item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse Clubs</a>
       <a class="{{ isActiveRoute 'Add_Club_Page'}} ui borderless item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
       <a class="{{ isActiveRoute 'Edit_Club_Page'}} ui borderless item" href="{{ pathFor 'Edit_Club_Page' }}">Edit Club</a>
-      {{> Cas_Login }}
-
-      <a class="{{ isActiveRoute 'User_Home_Page'}} ui borderless item" href="{{ pathFor 'User_Home_Page' }}">User Home</a>
-      <a class="{{ isActiveRoute 'Profile_Page'}} item" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
+      <a class="{{ isActiveRoute 'User_Home_Page'}} ui right borderless item" href="{{ pathFor 'User_Home_Page' }}">User Home</a>
+      <a class="{{ isActiveRoute 'Profile_Page'}} item borderless" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
+      {{> Cas_Login}}
+      {{else}}
+      <div class="right item">{{> Cas_Login}}</div>
+      {{/if}}
 
     </div>
 
-
   </div>
+
 </template>

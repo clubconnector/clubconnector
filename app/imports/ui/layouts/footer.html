@@ -1,4 +1,5 @@
 <template name="Footer">
+  {{#If_Logged_In}}
   <footer>
     <div class="footer-wrapper">
       <div id="footer" class="ui three column grid container">
@@ -30,4 +31,6 @@
     </div>
 
   </footer>
+  {{/If_Logged_In}}
 </template>
+
