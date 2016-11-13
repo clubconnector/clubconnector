@@ -15,6 +15,24 @@ export const UsersSchema = new SimpleSchema({
     optional: false,
     max: 30,
   },
+  firstname: {
+    label: 'firstname',
+    type: String,
+    optional: false,
+    max: 30,
+  },
+  lastname: {
+    label: 'lastname',
+    type: String,
+    optional: false,
+    max: 30,
+  },
+  majors: {
+    label: 'majors',
+    type: [String],
+    optional: false,
+    max: 50,
+  },
   favoriteClubs: {
     label: 'favoriteClubs',
     type: [ClubsSchema],

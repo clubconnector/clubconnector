@@ -22,19 +22,21 @@
             <div class="ui centered row">
               <div class="ui left aligned twelve wide basic segment column">
                 <div class="ui header">Name:</div>
-                Robert Figgs
+                {{user.firstname}} {{user.lastname}}
               </div>
             </div>
             <div class="ui centered row">
               <div class="ui left aligned twelve wide basic segment column">
-                <div class="ui header">Email:</div>
-                rfiggs@hawaii.edu
+                <div class="ui header">Username:</div>
+                {{user.username}}
               </div>
             </div>
             <div class="ui centered row">
               <div class="ui left aligned twelve wide basic segment column">
                 <div class="ui header">Major:</div>
-                Computer Science
+                {{#each major in user.majors}}
+                  {{major}}
+                {{/each}}
               </div>
             </div>
 
@@ -47,43 +49,21 @@
               <br/>
               Favorite clubs
             </h1>
-            <div class="ui three column row">
-              <div class="ui column">
-                <div class="ui card">
-                  <div class="image">
-                    <img class="ui image" src="/images/meteor-logo.png">
-                  </div>
-                  <div class="content">
-                    <a class="header" href="#">
-                      Grey Hats
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="ui column">
-                <div class="ui card">
-                  <div class="image">
-                    <img class="ui image" src="/images/meteor-logo.png">
-                  </div>
-                  <div class="content">
-                    <a class="header" href="#">
-                      Grey Hats
-                    </a>
+            <div class="ui row">
+              {{#each club in user.favoriteClubs}}
+                <div class="ui column">
+                  <div class="ui card">
+                    <div class="image">
+                      <img class="ui image" src="/images/meteor-logo.png">
+                    </div>
+                    <div class="content">
+                      <a class="header" href="#">
+                        {{club.orgName}}
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="ui column">
-                <div class="ui card">
-                  <div class="image">
-                    <img class="ui image" src="/images/meteor-logo.png">
-                  </div>
-                  <div class="content">
-                    <a class="header" href="#">
-                      Grey Hats
-                    </a>
-                  </div>
-                </div>
-              </div>
+              {{/each}}
             </div>
             <div class="ui hidden divider row"></div>
           </div>
