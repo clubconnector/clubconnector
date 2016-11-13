@@ -38,7 +38,7 @@ body {
   position: relative;
   top: 60%;
   left: 60%;
-  max-width: 550px;
+  max-width: 45%;
   padding-right: 100px;
 }
 
@@ -76,8 +76,9 @@ form.ui.form.club-data-form {
 @media (max-width: 991px) {
   /* Rules for viewports smaller than 991px*/
   #slogan-box {
-    top: 85%;
-    left: 35%;
+    top: 65%;
+    left: 50%;
+    max-width: 50%;
   }
 }
 
@@ -86,12 +87,24 @@ form.ui.form.club-data-form {
   #menu .ui.container .ui.item {
     padding-top: 15px;
     padding-bottom: 15px;
+    border-color: #1a1a1a;
+    border-bottom: 0.25px solid;
   }
 
   #slogan-box {
     top: 50%;
     left: 50%;
     max-width: 40%;
+  }
+}
+
+@media (max-width: 539px) {
+  /* Rules for tablets and smaller viewports */
+  #slogan-box {
+    top: 45%;
+    left: 50%;
+    max-width: 50%;
+    padding-right: 10px;
   }
 }
 
