@@ -10,8 +10,14 @@ import './browse-clubs-page.js';
 import './home-page.html';
 import './home-page.js';
 
+import './user-home-page.html';
+import './user-home-page.js';
+
 import './cas-login.html';
 import './cas-login.js';
 
 import './profile-page.html';
 import './profile-page.js';
+
+import './landing-page.html';
+import './landing-page.js';

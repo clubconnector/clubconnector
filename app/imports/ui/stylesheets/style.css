@@ -1,56 +1,45 @@
-.ui.borderless.topmenu.menu {
+body {
+  min-width: 245px;
+}
+
+#topmenu {
   box-shadow: none;
   border: none;
   margin: 0;
 }
 
-.ui.fluid.banner.image {
-  margin: 10px;
-  padding-right: 20px;
-}
-
 #menu {
-  z-index: 2;
   margin: 0;
-  margin-bottom: 12px;
   border-radius: 0;
   background-color: #1a1a1a;
   color: white;
-  height: 28px;
+  border-bottom: 1px solid #ffffff;
 }
 
-#login-buttons a, .accounts-dialog a {
-  color: white;
-}
-
-.login-close-text {
-  color: black;
+#menu .ui.container .item {
+  background-color: #1a1a1a;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .image-background {
   background: url('/images/club.jpg') no-repeat center;
-  background-size: contain;
+  background-size: cover;
   color: white;
   height: 410px;
+  display: block;
 }
 
-.main.column{
-  position: relative;
-  top: 100%;
-  transform: 			translateY(140%);
-}
-
-.main.column h1{
-  padding: 50px;
-  text-align: left;
-  opacity: 1; !important
-  z-index: 3;
-}
-
-#sloganColumn {
+#slogan-box {
   background-color: rgb(11, 33, 31);
   background-color: rgba(11, 33, 31, 0.5);
-  border-radius: 25px;
+  padding: 5px;
+  text-align: left;
+  position: relative;
+  top: 60%;
+  left: 60%;
+  max-width: 45%;
+  padding-right: 100px;
 }
 
 form.ui.form.club-data-form {
@@ -64,22 +53,71 @@ form.ui.form.club-data-form {
 }
 
 .footer-wrapper {
-  z-index: 2;
   clear: left;
   border-top: 1px solid #ffffff;
-  background: #222222;
-  padding: 20px 0;
+  background-color: #1a1a1a;
+  padding: 40px 0;
   text-align: left;
   color: white;
 }
 
-#footer {
-  margin-top: 35px;
-  margin-bottom: 10px;
+.footer-wrapper #footer .column .item-box {
+  background-color: #222222;
+  padding: 15px;
+  min-height: 136px;
 }
 
-#footer .column h4 {
+#footer .column .item-box h4 {
   border-bottom: 1px solid
   #ffffff;
   padding-bottom: 5px;
+}
+
+@media (max-width: 991px) {
+  /* Rules for viewports smaller than 991px*/
+  #slogan-box {
+    top: 65%;
+    left: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Rules for tablets and smaller viewports */
+  #menu .ui.container .item {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-color: #1a1a1a;
+    border-bottom: 0.25px solid;
+  }
+
+  #slogan-box {
+    top: 50%;
+    left: 50%;
+    max-width: 40%;
+  }
+}
+
+@media (max-width: 539px) {
+  /* Rules for tablets and smaller viewports */
+  #slogan-box {
+    top: 45%;
+    left: 50%;
+    max-width: 50%;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 397px) {
+  /* Rules for tablets and smaller viewports */
+  #topmenu .ui.container .right.menu .item .ui.icon.input{
+    max-width: 47%;
+  }
+}
+
+@media (max-width: 287px) {
+  /* Rules for phone-sized and smaller viewports */
+  #topmenu .ui.container .right.menu .item .ui.icon.input{
+    max-width: 26.5%;
+  }
 }
