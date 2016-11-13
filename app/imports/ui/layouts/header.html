@@ -21,15 +21,14 @@
   <div id="menu" class="ui inverted stackable github borderless menu">
     <div class="ui container">
       <a class="ui header item" href="{{pathFor 'Home_Page'}}"><h1>ClubConnector</h1></a>
+      <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse Clubs</a>
       {{#if currentUser}}
-      <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse
-        Clubs</a>
       <a class="{{ isActiveRoute 'Add_Club_Page'}} ui item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
       <a class="{{ isActiveRoute 'User_Home_Page'}} ui right borderless item" href="{{ pathFor 'User_Home_Page' }}">User Home</a>
       <a class="{{ isActiveRoute 'Profile_Page'}} item" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
       {{> Cas_Login }}
       {{else}}
-      <div class="right item">{{> Cas_Login}}</div>
+      <div class="ui right item">{{> Cas_Login}}</div>
       {{/if}}
     </div>
 
