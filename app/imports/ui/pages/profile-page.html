@@ -1,0 +1,110 @@
+<template name="Profile_Page">
+  <div class="ui container">
+
+    {{#if Template.subscriptionsReady}}
+      <div class="ui  grid">
+        <div class="ui centered row">
+          <h1 class="ui header">
+            Profile Page
+          </h1>
+        </div>
+        <div class="ui centered row">
+          <h2 class="ui small six wide basic segment column">
+            Welcome to your profile page! Here you can manage your default filters and your favorite clubs.
+          </h2>
+        </div>
+        <div class="ui one column centered row">
+          <div class="ui grid  segment">
+            <h1 class="ui centered header row">
+              <br/>
+              Personal Information
+            </h1>
+            <div class="ui centered row">
+              <div class="ui left aligned twelve wide basic segment column">
+                <div class="ui header">Name:</div>
+                Robert Figgs
+              </div>
+            </div>
+            <div class="ui centered row">
+              <div class="ui left aligned twelve wide basic segment column">
+                <div class="ui header">Email:</div>
+                rfiggs@hawaii.edu
+              </div>
+            </div>
+            <div class="ui centered row">
+              <div class="ui left aligned twelve wide basic segment column">
+                <div class="ui header">Major:</div>
+                Computer Science
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div class="ui one column centered row">
+          <div class="ui grid  segment">
+            <h1 class="ui centered header row">
+              <br/>
+              Favorite clubs
+            </h1>
+            <div class="ui three column row">
+              <div class="ui column">
+                <div class="ui card">
+                  <div class="image">
+                    <img class="ui image" src="/images/meteor-logo.png">
+                  </div>
+                  <div class="content">
+                    <a class="header" href="#">
+                      Grey Hats
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="ui column">
+                <div class="ui card">
+                  <div class="image">
+                    <img class="ui image" src="/images/meteor-logo.png">
+                  </div>
+                  <div class="content">
+                    <a class="header" href="#">
+                      Grey Hats
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="ui column">
+                <div class="ui card">
+                  <div class="image">
+                    <img class="ui image" src="/images/meteor-logo.png">
+                  </div>
+                  <div class="content">
+                    <a class="header" href="#">
+                      Grey Hats
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui hidden divider row"></div>
+          </div>
+
+        </div>
+        <div class="ui one column centered row">
+          <div class="ui grid  segment">
+            <h1 class="ui centered header row">
+              <br/>
+              Filter Preferences
+            </h1>
+            <div class="ui hidden divider row"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+    {{else}}
+      {{> Loading}}
+    {{/if}}
+
+  </div>
+</template>

@@ -16,7 +16,7 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 
-#menu .ui.container .ui.item {
+#menu .ui.container .item {
   background-color: #1a1a1a;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -84,7 +84,7 @@ form.ui.form.club-data-form {
 
 @media (max-width: 767px) {
   /* Rules for tablets and smaller viewports */
-  #menu .ui.container .ui.item {
+  #menu .ui.container .item {
     padding-top: 15px;
     padding-bottom: 15px;
     border-color: #1a1a1a;
