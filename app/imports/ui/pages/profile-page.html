@@ -2,6 +2,9 @@
   <div class="ui container">
 
     {{#if Template.subscriptionsReady}}
+      {{#if noProfile}}
+        {{makeProfile}}
+      {{/if}}
       <div class="ui  grid">
         <div class="ui centered row">
           <h1 class="ui header">
