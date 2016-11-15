@@ -1,4 +1,5 @@
 {
+  },
   "cas": {
     "baseUrl": "https://cas-test.its.hawaii.edu/cas/",
     "autoClose": true

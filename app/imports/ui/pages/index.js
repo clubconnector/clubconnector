@@ -24,3 +24,6 @@ import './landing-page.js';
 
 import './club-page.html';
 import './club-page.js';
+
+import './calendar.html';
+import './calendar.js';
