@@ -1,6 +1,6 @@
 <template name="Profile_Page">
   <div class="ui container">
-
+    {{#if currentUser}}
     {{#if Template.subscriptionsReady}}
       {{#if noProfile}}
         {{makeProfile}}
@@ -88,6 +88,8 @@
     {{else}}
       {{> Loading}}
     {{/if}}
+    {{else}}
 
+    {{/if}}
   </div>
 </template>
