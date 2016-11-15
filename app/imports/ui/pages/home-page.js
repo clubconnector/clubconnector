@@ -16,3 +16,4 @@ Template.Home_Page.onCreated(function onCreated() {
     this.subscribe('Clubs');
   });
 });
+
