@@ -2,7 +2,10 @@
   <div class="ui container">
 
     {{#if Template.subscriptionsReady}}
-      <div class="ui padded grid">
+      {{#if noProfile}}
+        {{makeProfile}}
+      {{/if}}
+      <div class="ui  grid">
         <div class="ui centered row">
           <h1 class="ui header">
             Profile Page
@@ -13,80 +16,74 @@
             Welcome to your profile page! Here you can manage your default filters and your favorite clubs.
           </h2>
         </div>
-        <div class="ui centered row">
-          <h2 class="ui fourteen wide column">
-            <div class="ui padded grid segment">
-              <div class="ui centered row">
-                Robert Figgs
-              </div>
-              <div class="ui centered row">
-                rfiggs
-              </div>
-              <div class="ui three column divided row">
-                <div class ="ui column">
-                  <table class="ui celled table">
-                    <thead>
-                    <tr>
-                      <th>Major</th>
-
-                    </tr>
-                    </thead>
-
-                    <tbody>
-
-                      <tr>
-                        <td>Computer Science</td>
-                      </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-                <div class ="ui column">
-                  <table class="ui celled table">
-                    <thead>
-                    <tr>
-                      <th>Favorite Clubs</th>
-
-                    </tr>
-                    </thead>
-
-                    <tbody>
-
-                    <tr>
-                      <td>Grey Hats</td>
-                    </tr>
-                    <tr>
-                      <td>Art Club</td>
-                    </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-                <div class ="ui column">
-                  <table class="ui celled table">
-                    <thead>
-                    <tr>
-                      <th>Default Filters </th>
-
-                    </tr>
-                    </thead>
-
-                    <tbody>
-
-                    <tr>
-                      <td>Mathematics</td>
-                    </tr>
-                    <tr>
-                      <td>Outdoors</td>
-                    </tr>
-
-                    </tbody>
-                  </table>
-                </div>
+        <div class="ui one column centered row">
+          <div class="ui grid  segment">
+            <h1 class="ui centered header row">
+              <br/>
+              Personal Information
+            </h1>
+            <div class="ui centered row">
+              <div class="ui left aligned twelve wide basic segment column">
+                <div class="ui header">Name:</div>
+                {{user.firstname}} {{user.lastname}}
               </div>
             </div>
-          </h2>
+            <div class="ui centered row">
+              <div class="ui left aligned twelve wide basic segment column">
+                <div class="ui header">Username:</div>
+                {{user.username}}
+              </div>
+            </div>
+            <div class="ui centered row">
+              <div class="ui left aligned twelve wide basic segment column">
+                <div class="ui header">Major:</div>
+                {{#each major in user.majors}}
+                  {{major}}
+                {{/each}}
+              </div>
+            </div>
+
+          </div>
+
         </div>
+        <div class="ui one column centered row">
+          <div class="ui grid  segment">
+            <h1 class="ui centered header row">
+              <br/>
+              Favorite clubs
+            </h1>
+            <div class="ui row">
+              {{#each club in user.favoriteClubs}}
+                <div class="ui column">
+                  <div class="ui card">
+                    <div class="image">
+                      <img class="ui image" src="/images/meteor-logo.png">
+                    </div>
+                    <div class="content">
+                      <a class="header" href="#">
+                        {{club.orgName}}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+            <div class="ui hidden divider row"></div>
+          </div>
+
+        </div>
+        <div class="ui one column centered row">
+          <div class="ui grid  segment">
+            <h1 class="ui centered header row">
+              <br/>
+              Filter Preferences
+            </h1>
+            <div class="ui hidden divider row"></div>
+
+          </div>
+
+        </div>
+
       </div>
     {{else}}
       {{> Loading}}
