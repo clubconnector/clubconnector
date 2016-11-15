@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { ClubsSchema } from '../clubs/clubs.js';
+import { TagsSchema } from '../tags/tags.js';
 /* eslint-disable object-shorthand */
 
 export const Users = new Mongo.Collection('Users');
@@ -45,7 +46,7 @@ export const UsersSchema = new SimpleSchema({
   },
   defaultFilters: {
     label: 'defaultFilters',
-    type: [String],
+    type: [TagsSchema],
     optional: false,
     max: 50,
     defaultValue: [],
