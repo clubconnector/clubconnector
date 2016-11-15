@@ -121,3 +121,7 @@ form.ui.form.club-data-form {
     max-width: 26.5%;
   }
 }
+
+#club-title {
+  padding: 12px;
+}

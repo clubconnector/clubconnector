@@ -36,6 +36,13 @@ FlowRouter.route('/edit-club/:_id', {
   },
 });
 
+FlowRouter.route('/club-page/123', {
+  name: 'Club_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Club_Page' });
+  },
+});
+
 FlowRouter.route('/user-home', {
   name: 'User_Home_Page',
   action() {

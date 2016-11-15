@@ -22,6 +22,7 @@
     <div class="ui container">
       <a class="ui header item" href="{{pathFor 'Home_Page'}}"><h1>ClubConnector</h1></a>
       <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse Clubs</a>
+      <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">View Club</a>
       {{#if currentUser}}
       <a class="{{ isActiveRoute 'Add_Club_Page'}} ui item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
       <a class="{{ isActiveRoute 'Profile_Page'}} ui right item" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
