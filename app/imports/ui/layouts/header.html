@@ -3,10 +3,10 @@
   <div id="topmenu" class="ui borderless topmenu menu">
 
     <div class="ui container">
-
+      <a class="item" href="{{pathFor 'Home_Page'}}">
       <img class="ui image item"
            src="/images/uhm_title_small.png">
-
+      </a>
       <div class="right menu">
         <div class="item">
           <div class="ui icon input">
@@ -25,7 +25,7 @@
       {{#if currentUser}}
       <a class="{{ isActiveRoute 'Add_Club_Page'}} ui item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
       <a class="{{ isActiveRoute 'Profile_Page'}} ui right item" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
-      {{> Cas_Login }}
+      <div class="ui item">{{> Cas_Login }} Logged in as {{user}}</div>
       {{else}}
       <div class="right item">{{> Cas_Login}}</div>
       {{/if}}
