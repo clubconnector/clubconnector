@@ -24,7 +24,6 @@
       <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse Clubs</a>
       {{#if currentUser}}
       <a class="{{ isActiveRoute 'Add_Club_Page'}} ui item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
-      <a class="{{ isActiveRoute 'Profile_Page'}} ui right item" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
       {{> Cas_Login }}
       {{else}}
       <div class="right item">{{> Cas_Login}}</div>
