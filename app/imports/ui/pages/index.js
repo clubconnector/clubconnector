@@ -19,9 +19,6 @@ import './cas-login.js';
 import './profile-page.html';
 import './profile-page.js';
 
-import './landing-page.html';
-import './landing-page.js';
-
 import './club-page.html';
 import './club-page.js';
 
