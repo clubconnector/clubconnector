@@ -3,5 +3,25 @@
     "env": {
       "MONGO_URL": "mongodb://clubteam:123456@ds151137.mlab.com:51137/clubconnector"
     }
-  }
+  },
+  "cas": {
+    "baseUrl": "https://cas-test.its.hawaii.edu/cas/",
+    "autoClose": true
+  },
+  "public": {
+    "cas": {
+      "loginUrl": "https://cas-test.its.hawaii.edu/cas/login",
+      "serviceParam": "service",
+      "popupWidth": 810,
+      "popupHeight": 610
+    }
+  },
+  "allowed_users": [
+    "johnson",
+    "cmoore",
+    "keanur",
+    "rfiggs",
+    "yohany",
+    "wmmb"
+  ]
 }
