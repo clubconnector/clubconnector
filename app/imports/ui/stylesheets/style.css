@@ -26,7 +26,7 @@ body {
   background: url('/images/club.jpg') no-repeat center;
   background-size: cover;
   color: white;
-  height: 515px;
+  height: 410px;
   display: block;
 }
 
@@ -55,14 +55,14 @@ form.ui.form.club-data-form {
 .footer-wrapper {
   clear: left;
   border-top: 1px solid #ffffff;
-  background-color: #1a1a1a;
+  background-color: #222222;
   padding: 40px 0;
   text-align: left;
   color: white;
 }
 
 .footer-wrapper #footer .column .item-box {
-  background-color: #222222;
+  background-color: #1a1a1a;
   padding: 15px;
   min-height: 136px;
 }
@@ -73,10 +73,9 @@ form.ui.form.club-data-form {
   padding-bottom: 5px;
 }
 
-#footer .column #uhm-footer-logo {
-  background-color: #1a1a1a;
+#footer .column #footer-logo-box {
   background: url('/images/UHM_banner.png') no-repeat center;
-  background-size: contain;
+  background-size: 80%;
 }
 
 @media (max-width: 991px) {
@@ -130,4 +129,12 @@ form.ui.form.club-data-form {
 
 #club-title {
   padding: 12px;
+}
+
+.club-content-box {
+  margin-left: 250px;
+}
+
+.left.sidebar {
+  max-width: 250px;
 }

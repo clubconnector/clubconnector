@@ -1,23 +1,44 @@
 <template name="Club_Page">
 
-    {{#if Template.subscriptionsReady}}
-      <div class = "ui fluid container">
-        <h1 id="club-title" class="ui header">ACManoa</h1>
-      </div>
+  {{#if Template.subscriptionsReady}}
+    <div class="ui fluid container">
+      <h1 id="club-title" class="ui header">Association for Computing Machinery at UH Manoa (ACManoa)</h1>
+    </div>
 
+    <div class="left sidebar">
       <div class="ui secondary vertical pointing menu">
-        <a class="active item">
-          About
+        <a class="item homeTab {{aboutActiveClass}}">
+          <i class="info circle icon"></i>About
         </a>
-        <a class="item">
-          Members
+        <a class="item eventsTab {{eventsActiveClass}}">
+          <i class="calendar outline icon"></i>Events
         </a>
-        <a class="item">
-          Events
+        <a class="item friendsTab {{membersActiveClass}}">
+          <i class="user icon"></i>Members
         </a>
       </div>
-    {{else}}
-      {{> Loading}}
+    </div>
+
+    {{#if aboutActiveClass}}
+      <div class="pusher">
+        <div class="club-content-box container">
+          <div class="ui three column grid">
+            <div class="column">
+              <h4 class="item">Type:</h4>
+            </div>
+            <div class="column">
+              <h4 class="item">Contact Person:</h4>
+            </div>
+            <div class="column">
+              <h4 class="item">Club Communication:</h4>
+            </div>
+          </div>
+        </div>
+      </div>
     {{/if}}
+
+  {{else}}
+    {{> Loading}}
+  {{/if}}
 
 </template>
