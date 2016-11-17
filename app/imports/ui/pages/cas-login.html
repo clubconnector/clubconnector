@@ -2,10 +2,11 @@
   <div class="ui simple borderless dropdown right item">
     {{#if currentUser}}
     <div class="text">{{ user }}</div>
+    <i class="dropdown icon"></i>
     {{else}}
     <div class="text">Account</div>
     {{/if}}
-    <!-- <i class="dropdown icon"></i> -->
+    <i class="dropdown icon"></i>
     <div class="menu">
       {{#if currentUser}}
       <a class="{{ isActiveRoute 'Profile_Page'}} item" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
