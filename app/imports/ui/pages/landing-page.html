@@ -1,5 +1,11 @@
 <template name="Welcome">
+  <div class="ui container">
+    <h1>Welcome to Manoa ClubConnector! The only place to connect to each of University of Hawaii's 200+ clubs</h1>
+    <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui button" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
+    <button class=" ui button cas-login">
+      Login
+    </button>
 
-  <h1>Hello World!</h1>
-
+  </div>
 </template>
+
