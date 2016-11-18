@@ -22,5 +22,8 @@ import './profile-page.js';
 import './club-page.html';
 import './club-page.js';
 
+import './club-about-page.html';
+import './club-about-page.js';
+
 import './calendar.html';
 import './calendar.js';
