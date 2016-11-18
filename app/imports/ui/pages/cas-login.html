@@ -1,8 +1,7 @@
 <template name="Cas_Login">
   <div class="ui simple borderless dropdown right item">
     {{#if currentUser}}
-    <div class="text">{{ user }}</div>
-    <i class="dropdown icon"></i>
+    <div class="text">Logged in as {{user}}</div>
     {{else}}
     <div class="text">Account</div>
     {{/if}}
