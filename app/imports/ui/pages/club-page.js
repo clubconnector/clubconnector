@@ -6,7 +6,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor'; // to access Meteor.users collection
-import { Clubs, ClubsSchema } from '../../api/clubs/clubs.js';
+import { Clubs } from '../../api/clubs/clubs.js';
 
 // consts to use in reactive dicts
 const displayErrorMessages = 'displayErrorMessages';
