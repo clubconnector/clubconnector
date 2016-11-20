@@ -139,3 +139,8 @@ form.ui.form.club-data-form {
 .club-page-wrapper {
   padding: 20px 0;
 }
+
+#club-about-grid .column {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}

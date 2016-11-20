@@ -3,7 +3,7 @@
   {{#if Template.subscriptionsReady}}
     <div class="club-page-wrapper">
       <div class="ui fluid container">
-        <h1 id="club-title" class="ui header">Association for Computing Machinery at UH Manoa (ACManoa)</h1>
+        <h1 id="club-title" class="ui header">Association for Computing Machinery at Manoa (ACManoa)</h1>
       </div>
 
       <div class="ui grid">
@@ -24,6 +24,12 @@
         <div class="twelve wide column">
           {{#if aboutActiveClass}}
             {{> Club_About_Page}}
+          {{/if}}
+          {{#if eventsActiveClass}}
+            {{> Calendar}}
+          {{/if}}
+          {{#if membersActiveClass}}
+            {{> Club_Members_Page}}
           {{/if}}
         </div>
       </div>
