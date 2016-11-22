@@ -20,13 +20,9 @@ Template.Browse_Clubs_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Clubs');
     this.subscribe('Tags');
-    $('.ui.dropdown')
-        .dropdown()
-    ;
   });
 });
-Template.Browse_Clubs_Page.events({
-  'click .ui.dropdown'() {
-    $('.ui.dropdown').dropdown('toggle');
-  },
+Template.Browse_Clubs_Page.onRendered(function enableDropdown() {
+  this.$('#filterDropdown.ui.multiple.selection.dropdown').dropdown().dropdown('set active');
+  console.log('drrr');
 });

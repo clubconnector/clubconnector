@@ -22,3 +22,5 @@ import './profile-page.js';
 import './calendar.html';
 import './calendar.js';
 
+import './filter-dropdown.html';
+import './filter-dropdown.js';
