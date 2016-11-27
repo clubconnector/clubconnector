@@ -1,11 +1,39 @@
-<template name="Welcome">
+<template name="Welcome" xmlns="http://www.w3.org/1999/html">
   {{#if currentUser}}
-    {{ home }}
+  {{ home }}
   {{/if}}
-  <div class="ui container">
-    <h1>Welcome to Manoa ClubConnector! The only place to connect to each of University of Hawaii's 200+ clubs</h1>
-    <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui button" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
-    <a class="ui button cas-login">Login</a>
+  <div style="
+  background-image: url('/images/landing-page-background.jpg');
+  background-repeat: no-repeat;
+  background-size:contain;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  padding-top: 56.25%">
   </div>
+
+  <div style="
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;">
+
+    <h1 style="
+    text-align: center;
+    font-size: 15pt;
+    margin-top: 40px;">
+      Welcome to Manoa ClubConnector! The only place to connect to each of University of Hawaii's 200+ clubs</h1>
+
+
+    <div style="text-align: center; margin-top: 90px;">
+
+      <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui button" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
+      <a class="ui button cas-login">Login</a>
+
+    </div>
+  </div>
+
 </template>
 
