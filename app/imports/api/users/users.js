@@ -46,7 +46,7 @@ export const UsersSchema = new SimpleSchema({
   },
   defaultFilters: {
     label: 'defaultFilters',
-    type: [TagsSchema],
+    type: [String],
     optional: false,
     max: 50,
     defaultValue: [],

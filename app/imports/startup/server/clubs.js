@@ -1,5 +1,7 @@
 import { Clubs } from '../../api/clubs/clubs.js';
 import { _ } from 'meteor/underscore';
+import { Tags } from '../../api/tags/tags.js';
+
 
 /**
  * A list of Clubs to pre-fill the Collection.
@@ -15,6 +17,7 @@ const clubSeeds = [
     orgEmail: 'acmsa@hawaii.edu',
     orgWebsite: '',
     orgSocial: '',
+    tags: ['Art'],
   },
 
   {
@@ -26,6 +29,7 @@ const clubSeeds = [
     orgEmail: 'isuh@hawaii.edu',
     orgWebsite: '',
     orgSocial: 'Facebook: IslamicSocietyatUH',
+    tags: ['International'],
   },
   {
     type: 'Leisure/Recreational',
@@ -36,6 +40,7 @@ const clubSeeds = [
     orgEmail: 'tadauhm@gmail.com',
     orgWebsite: '',
     orgSocial: 'FB: TADA UHM',
+    tags: ['Art', 'Music'],
   },
   {
     type: 'Political',
@@ -46,6 +51,7 @@ const clubSeeds = [
     orgEmail: 'safa@hawaii.edu',
     orgWebsite: '',
     orgSocial: 'FB: safa at uh manoa',
+    tags: ['Outdoors'],
   },
 
 ];
@@ -53,7 +59,10 @@ const clubSeeds = [
 /**
  * Initialize the Clubs collection if empty with seed data.
  */
-if (Clubs.find().count() === 0) {
+// this is to make sure that these values update each time the server refreshes
+// remove on production
+Clubs.remove({});
+if (Clubs.find().count() === 0){
   _.each(clubSeeds, function seedContacts(club) {
     Clubs.insert(club);
   });

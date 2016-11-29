@@ -3,23 +3,14 @@
 
 
   {{#if Template.subscriptionsReady}}
-      <div class="ui fluid multiple selection dropdown">
-        <div class="text">Select</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          {{#each filter in filterList}}
-            <div class="item" data-value="{{filter.name}}">{{filter.name}}</div>
-          {{/each}}
-        </div>
-      </div>
-
+    {{> Filter_Dropdown}}
 
     <div id="clubs" class="ui three column grid">
 
     <div class="column">
       <div class="ui fluid card">
         <div class="image">
-          <img src="/images/cr.jpg">
+          <img src="/images/CR.jpg">
         </div>
         <div class="content">
 
@@ -59,7 +50,7 @@
     <div class="column">
       <div class="ui fluid card">
         <div class="image">
-          <img src="/images/am.jpg">
+          <img src="/images/AM.jpg">
         </div>
         <div class="content">
 
@@ -99,7 +90,7 @@
     <div class="column">
       <div class="ui fluid card">
         <div class="image">
-          <img src="images/dc.jpg">
+          <img src="images/DC.jpg">
         </div>
         <div class="content">
 
@@ -141,15 +132,6 @@
 
   <!--
     {{#if Template.subscriptionsReady}}
-      <div class="ui fluid multiple selection dropdown">
-        <div class="text">Select</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          {{#each filter in filterList}}
-            <div class="item" data-value="{{filter.name}}">{{filter.name}}</div>
-          {{/each}}
-        </div>
-      </div>
 
       <table class="ui celled table">
         <thead>
