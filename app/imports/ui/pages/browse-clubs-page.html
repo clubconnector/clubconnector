@@ -13,37 +13,129 @@
         </div>
       </div>
 
-    <div class="ui link cards">
-      <div class="card">
+
+    <div id="clubs" class="ui three column grid">
+
+    <div class="column">
+      <div class="ui fluid card">
+        <div class="image" src="/images/profile.png">
+          <img src="">
+        </div>
+        <div class="content">
+
+          <thead>
+          <th>Academy of Creative Media Student Association</th>
+          </thead>
+
+          <tbody>
+          <tr>
+            <div>Academic/Professional</div>
+          </tr>
+          </tbody>
+
+          <div class="description">
+            Description
+          </div>
+        </div>
+        <div class="extra content">
+       <span class="left floated">
+        <th>Acronym</th>
+
+      </span>
+          <span class="right floated">
+            <th>Contact Person</th>
+        Alexander Jordan Vetter
+      </span>
+        </div>
+
+        <div class="ui bottom attached button">
+          <i class="edit icon"></i>
+          <a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="ui fluid card">
         <div class="image">
           <img src="">
         </div>
         <div class="content">
 
           <thead>
-          <th>Type</th>
+          <th>Student Alliance for Animals</th>
           </thead>
-          {{#each club in clubsList}}
+
           <tbody>
           <tr>
-            <div>{{club.type}}</div>
+            <div>Political</div>
           </tr>
           </tbody>
-          {{/each}}
+
           <div class="description">
             Description
           </div>
         </div>
         <div class="extra content">
-      <span class="right floated">
-        Extra Contents
+       <span class="left floated">
+         <th>Acronym</th>
+        SAFA
       </span>
-          <span>
-        <i class="user icon"></i>
-        Extra Contents 2
+          <span class="right floated">
+            <th>Contact Person</th>
+        Shauna Leake
       </span>
         </div>
+
+        <div class="ui bottom attached button">
+          <i class="edit icon"></i>
+          <a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a>
+        </div>
+
       </div>
+    </div>
+
+    <div class="column">
+      <div class="ui fluid card">
+        <div class="image">
+          <img src="">
+        </div>
+        <div class="content">
+
+          <thead>
+          <th>Theatre and Dance Association</th>
+          </thead>
+
+          <tbody>
+          <tr>
+            <div>Leisure/Recreational</div>
+          </tr>
+          </tbody>
+
+          <div class="description">
+            Description
+          </div>
+        </div>
+        <div class="extra content">
+      <span class="left floated">
+        <th>Acronym</th>
+        TADA
+      </span>
+          <span class="right floated">
+            <th>Contact Person</th>
+        Michelle Huynh
+      </span>
+        </div>
+
+        <div class="ui bottom attached button">
+          <i class="edit icon"></i>
+          <a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a>
+        </div>
+
+      </div>
+    </div>
+
     </div>
 
 
