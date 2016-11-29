@@ -1,6 +1,53 @@
 <template name="Browse_Clubs_Page">
   <div class="ui container">
 
+
+  {{#if Template.subscriptionsReady}}
+      <div class="ui fluid multiple selection dropdown">
+        <div class="text">Select</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          {{#each filter in filterList}}
+            <div class="item" data-value="{{filter.name}}">{{filter.name}}</div>
+          {{/each}}
+        </div>
+      </div>
+
+    <div class="ui link cards">
+      <div class="card">
+        <div class="image">
+          <img src="">
+        </div>
+        <div class="content">
+
+          <thead>
+          <th>Type</th>
+          </thead>
+          {{#each club in clubsList}}
+          <tbody>
+          <tr>
+            <div>{{club.type}}</div>
+          </tr>
+          </tbody>
+          {{/each}}
+          <div class="description">
+            Description
+          </div>
+        </div>
+        <div class="extra content">
+      <span class="right floated">
+        Extra Contents
+      </span>
+          <span>
+        <i class="user icon"></i>
+        Extra Contents 2
+      </span>
+        </div>
+      </div>
+    </div>
+
+
+  <!--
     {{#if Template.subscriptionsReady}}
       <div class="ui fluid multiple selection dropdown">
         <div class="text">Select</div>
@@ -46,6 +93,11 @@
       </table>
     {{else}}
       {{> Loading}}
+    {{/if}}
+    -->
+
+    {{else}}
+        {{> Loading}}
     {{/if}}
 
   </div>
