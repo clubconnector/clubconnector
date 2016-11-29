@@ -22,3 +22,6 @@ import './profile-page.js';
 import './calendar.html';
 import './calendar.js';
 
+import './landing-page.html';
+import './landing-page.js';
+
