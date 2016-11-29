@@ -1,7 +1,9 @@
 import { Template } from 'meteor/templating';
 import { Tags } from '../../api/tags/tags.js';
+import { ReactiveDict } from 'meteor/reactive-dict';
 
-
+const dict = new ReactiveDict();
+dict.set('filters', '');
 Template.Filter_Dropdown.helpers({
 
   /**
@@ -10,6 +12,9 @@ Template.Filter_Dropdown.helpers({
   filterList() {
     return Tags.find();
   },
+  values() {
+    return dict.get('filters');
+  },
 });
 
 Template.Filter_Dropdown.onCreated(function onCreated() {
@@ -17,7 +22,13 @@ Template.Filter_Dropdown.onCreated(function onCreated() {
     this.subscribe('Tags');
   });
 });
+Template.Filter_Dropdown.events({
+
+});
 Template.Filter_Dropdown.onRendered(function enableDropdown() {
-  this.$('#filterDropdown.ui.multiple.selection.dropdown').dropdown();
-  console.log('drrr');
+  this.$('#filterDropdown.ui.multiple.selection.dropdown').dropdown({
+    onChange(value) {
+      dict.set('filters', value);
+    },
+  });
 });

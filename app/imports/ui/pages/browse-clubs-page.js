@@ -1,28 +1,42 @@
 import { Template } from 'meteor/templating';
 import { Clubs } from '../../api/clubs/clubs.js';
 import { Tags } from '../../api/tags/tags.js';
+import { ReactiveDict } from 'meteor/reactive-dict';
+import { _ } from 'meteor/underscore';
 
-
+const dict = new ReactiveDict();
+dict.set('filters', []);
 Template.Browse_Clubs_Page.helpers({
 
   /**
    * @returns {*} All of the Clubs documents.
    */
   clubsList() {
-    return Clubs.find();
+    const filters = dict.get('filters').split(',');
+    let query = {};
+    console.log(filters);
+    if (filters[0] !== '') {
+      query = { tags: { $all: filters } };
+    }
+    return Clubs.find(query);
   },
-  filterList() {
-    return Tags.find();
-  },
+});
+
+Template.registerHelper('updateFilter', (string) => {
+  dict.set('filters', string);
+  console.log(string);
 });
 
 Template.Browse_Clubs_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Clubs');
     this.subscribe('Tags');
+
   });
 });
+Template.Browse_Clubs_Page.events({
+
+});
 Template.Browse_Clubs_Page.onRendered(function enableDropdown() {
-  this.$('#filterDropdown.ui.multiple.selection.dropdown').dropdown().dropdown('set active');
-  console.log('drrr');
+
 });
