@@ -1,0 +1,44 @@
+<template name="Welcome" xmlns="http://www.w3.org/1999/html">
+  {{#if currentUser}}
+  {{ home }}
+  {{/if}}
+  <div style="
+  background-image: url('/images/background.jpg');
+  background-repeat: no-repeat;
+  background-size:contain;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  padding-top: 56.25%">
+  </div>
+  <div class="top">
+    <div style="min-height: 700px;" class="ui vertical center aligned segment">
+      <div style="margin-top: 4em; font-size: 4em;" class="ui centered text container">
+        <div class="ui text container"><h1 style="color: #FFFFFF; font-size: 3em;"
+                                           class="ui huge header">WELCOME TO CLUBCONNECTOR</h1></div>
+        <h3 style="color: #FFFFFF" class="ui fitted header">THE PLACE WHERE YOU CAN CONNECT WITH UH MANOA'S 200+
+          CLUBS</h3>
+
+        <div class="text container">
+          <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui huge button" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
+          <div class="ui huge button cas-login">Login</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom" style="min-height: 400px; background-color: #F2F3F5;">
+    <div class="ui three column grid container">
+      <div class="column"></div>
+      <div class="column">
+        <div style="font-size: xx-large; text-align: center; padding-top: 70px">
+          <p>About ClubConnector</p></div>
+        <div class="text" style="text-align: center; text-space: 4px; padding-top: 15px;">A huge part of the college
+          experience is being joining clubs and being active in campus life. ClubConnector gives you a simple and easy
+          way to manage all your favorite clubs!
+        </div>
+      </div>
+      <div class="column"></div>
+    </div>
+  </div>
+</template>
+

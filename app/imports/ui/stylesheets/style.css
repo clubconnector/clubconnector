@@ -30,6 +30,11 @@ body {
   display: block;
 }
 
+.welcome {
+  background: url('/images/landing.jpg') no-repeat center;
+  background-size: contain;
+}
+
 #slogan-box {
   background-color: rgb(11, 33, 31);
   background-color: rgba(11, 33, 31, 0.5);
