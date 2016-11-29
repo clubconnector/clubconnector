@@ -19,6 +19,7 @@ const clubSeeds = [
     orgSocial: '',
     tags: ['Art'],
   },
+
   {
     type: 'Ethnic/Cultural',
     orgName: 'Islamic Society at University of Hawaii at Manoa',
@@ -52,6 +53,7 @@ const clubSeeds = [
     orgSocial: 'FB: safa at uh manoa',
     tags: ['Outdoors'],
   },
+
 ];
 
 /**

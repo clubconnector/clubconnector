@@ -19,8 +19,13 @@ import './cas-login.js';
 import './profile-page.html';
 import './profile-page.js';
 
-import './calendar.html';
-import './calendar.js';
+//import './calendar.html';
+//import './calendar.js';
 
 import './filter-dropdown.html';
 import './filter-dropdown.js';
+
+import './landing-page.html';
+import './landing-page.js';
+
+

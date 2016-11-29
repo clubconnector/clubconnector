@@ -14,7 +14,6 @@ Template.Browse_Clubs_Page.helpers({
   clubsList() {
     const filters = dict.get('filters').split(',');
     let query = {};
-    console.log(filters);
     if (filters[0] !== '') {
       query = { tags: { $all: filters } };
     }
@@ -24,7 +23,6 @@ Template.Browse_Clubs_Page.helpers({
 
 Template.registerHelper('updateFilter', (string) => {
   dict.set('filters', string);
-  console.log(string);
 });
 
 Template.Browse_Clubs_Page.onCreated(function onCreated() {
