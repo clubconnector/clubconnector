@@ -2,50 +2,49 @@
   <div class="ui container">
 
 
-  {{#if Template.subscriptionsReady}}
-    {{> Filter_Dropdown}}
+    {{#if Template.subscriptionsReady}}
+      {{> Filter_Dropdown}}
 
-    <div id="clubs" class="ui three column grid">
+      <div id="clubs" class="ui three column grid">
+        {{#each club in clubsList}}
+          <div class="column">
+            <div class="ui fluid card">
+              <div class="image">
+                <img src="/images/CR.jpg">
+              </div>
+              <div class="content">
+                <thead>
+                <th>{{club.orgName}}</th>
+                </thead>
+                <tbody>
+                <tr>
+                  <div>{{club.type}}</div>
+                </tr>
+                </tbody>
+                <div class="description">
+                  Description
+                </div>
+              </div>
+              <div class="extra content">
+               <span class="left floated">
+                <th>Acronym</th>
+                 {{club.acronym}}
+              </span>
+                <span class="right floated">
+                  <th>Contact Person</th>
+                  {{club.contactName}}
+                  </span>
+              </div>
 
-    <div class="column">
-      <div class="ui fluid card">
-        <div class="image">
-          <img src="/images/CR.jpg">
-        </div>
-        <div class="content">
+              <div class="ui bottom attached button">
+                <i class="edit icon"></i>
+                <a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a>
+              </div>
 
-          <thead>
-          <th>Academy of Creative Media Student Association</th>
-          </thead>
-
-          <tbody>
-          <tr>
-            <div>Academic/Professional</div>
-          </tr>
-          </tbody>
-
-          <div class="description">
-            Description
+            </div>
           </div>
-        </div>
-        <div class="extra content">
-       <span class="left floated">
-        <th>Acronym</th>
-
-      </span>
-          <span class="right floated">
-            <th>Contact Person</th>
-        Alexander Jordan Vetter
-      </span>
-        </div>
-
-        <div class="ui bottom attached button">
-          <i class="edit icon"></i>
-          <a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a>
-        </div>
-
-      </div>
-    </div>
+        {{/each}}
+        <!--
 
     <div class="column">
       <div class="ui fluid card">
@@ -126,11 +125,12 @@
 
       </div>
     </div>
+-->
 
-    </div>
+      </div>
 
 
-  <!--
+      <!--
     {{#if Template.subscriptionsReady}}
 
       <table class="ui celled table">
@@ -166,12 +166,12 @@
         </tbody>
       </table>
     {{else}}
-      {{> Loading}}
-    {{/if}}
+        {{> Loading}}
+      {{/if}}
     -->
 
     {{else}}
-        {{> Loading}}
+      {{> Loading}}
     {{/if}}
 
   </div>
