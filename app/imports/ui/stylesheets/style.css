@@ -145,11 +145,12 @@ form.ui.form.club-data-form {
   margin-bottom: 20px;
 }
 
-#club-about-grid .column .ui.dividing.header {
+.ui.club-about.dividing.header {
   color: white;
   background-color: #21BA45;
   border-radius: 4px;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 11px;
+  max-width: 300px;
 }
