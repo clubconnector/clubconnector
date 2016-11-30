@@ -30,3 +30,9 @@ import './club-members-page.js';
 
 import './calendar.html';
 import './calendar.js';
+
+import './filter-dropdown.html';
+import './filter-dropdown.js';
+
+import './landing-page.html';
+import './landing-page';

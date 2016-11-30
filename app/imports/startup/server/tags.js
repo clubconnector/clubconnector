@@ -19,7 +19,7 @@ const tagsSeeds = [
     name: 'Business',
   },
   {
-    name: 'Foreign',
+    name: 'International',
   },
   {
     name: 'Music',
@@ -29,7 +29,8 @@ const tagsSeeds = [
 /**
  * Initialize the Clubs collection if empty with seed data.
  */
-if (Tags.find().count() === 0) {
+if (Tags.find() !== tagsSeeds) {
+  Tags.remove({});
   _.each(tagsSeeds, function seedTags(tag) {
     Tags.insert(tag);
   });

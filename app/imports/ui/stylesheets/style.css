@@ -30,6 +30,11 @@ body {
   display: block;
 }
 
+.welcome {
+  background: url('/images/landing.jpg') no-repeat center;
+  background-size: contain;
+}
+
 #slogan-box {
   background-color: rgb(11, 33, 31);
   background-color: rgba(11, 33, 31, 0.5);
@@ -40,6 +45,11 @@ body {
   left: 60%;
   max-width: 45%;
   padding-right: 100px;
+}
+
+img.resize{
+  width:357px;
+  height:275px;
 }
 
 form.ui.form.club-data-form {
@@ -154,3 +164,4 @@ form.ui.form.club-data-form {
   padding-left: 11px;
   max-width: 300px;
 }
+
