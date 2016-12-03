@@ -1,13 +1,15 @@
 <template name="Browse_Clubs_Page">
-  <div class="ui container">
+  <div class="ui grid container segment">
 
 
     {{#if Template.subscriptionsReady}}
+      <div class="row">
       {{> Filter_Dropdown}}
-
-      <div id="clubs" class="ui three column grid">
+      </div>
+    <div class="ui  row">
+      <div id="clubs" class="ui  grid container">
         {{#each club in clubsList}}
-          <div class="column">
+          <div class="five wide column">
             <div class="ui fluid card">
               <div class="image">
                 <img src="/images/CR.jpg">
@@ -128,7 +130,7 @@
 -->
 
       </div>
-
+</div>
 
       <!--
     {{#if Template.subscriptionsReady}}

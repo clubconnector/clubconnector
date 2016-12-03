@@ -4,6 +4,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 
 const dict = new ReactiveDict();
 dict.set('filters', '');
+dict.set('search', '');
 Template.Filter_Dropdown.helpers({
 
   /**
@@ -12,8 +13,11 @@ Template.Filter_Dropdown.helpers({
   filterList() {
     return Tags.find();
   },
-  values() {
+  filters() {
     return dict.get('filters');
+  },
+  search() {
+    return dict.get('search');
   },
 });
 
@@ -23,7 +27,10 @@ Template.Filter_Dropdown.onCreated(function onCreated() {
   });
 });
 Template.Filter_Dropdown.events({
-
+  'keyup .searchClubs, keydown .searchClubs'(event) {
+    const val = event.target.value;
+    dict.set('search', val);
+  },
 });
 Template.Filter_Dropdown.onRendered(function enableDropdown() {
   this.$('#filterDropdown.ui.multiple.selection.dropdown').dropdown({
