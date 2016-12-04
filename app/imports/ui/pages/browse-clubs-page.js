@@ -5,7 +5,8 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 
 const dict = new ReactiveDict();
-dict.set('filters', []);
+dict.set('filters', '');
+dict.set('search', '');
 Template.Browse_Clubs_Page.helpers({
 
   /**
@@ -13,16 +14,28 @@ Template.Browse_Clubs_Page.helpers({
    */
   clubsList() {
     const filters = dict.get('filters').split(',');
-    let query = {};
+    const terms = dict.get('search').split(' ');
+    const query = { $and: [
+      { $or: [
+        { orgName: { $all: _.map(terms, (val) => (new RegExp(val, 'i'))) } },
+        { acronym: { $all: _.map(terms, (val) => (new RegExp(val, 'i'))) } },
+      ] },
+    ] };
     if (filters[0] !== '') {
-      query = { tags: { $all: filters } };
+      query.$and.push({ tags: { $all: filters } });
     }
-    return Clubs.find(query);
+    const list = Clubs.find(query);
+    return list;
+  },
+  search() {
+    const search = dict.get('search').split(' ');
+    return search;
   },
 });
 
-Template.registerHelper('updateFilter', (string) => {
-  dict.set('filters', string);
+Template.registerHelper('updateFilter', (filters, search) => {
+  dict.set('filters', filters);
+  dict.set('search', search);
 });
 
 Template.Browse_Clubs_Page.onCreated(function onCreated() {
