@@ -2,7 +2,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor'; // to access Meteor.users collection
-import { Clubs, ClubsSchema } from '../../api/clubs/clubs.js';
+import { Clubs } from '../../api/clubs/clubs.js';
 
 // consts to use in reactive dicts
 const displayErrorMessages = 'displayErrorMessages';
@@ -10,6 +10,16 @@ const displayErrorMessages = 'displayErrorMessages';
 const aboutActive = 'aboutActive';
 const eventsActive = 'eventsActive';
 const membersActive = 'membersActive';
+
+// For sticky menu
+/* Template.Club_Page.onRendered(function enableStickyMenu() {
+  this.$('.ui.sticky')
+      .sticky({
+        context: '#club-menu-area',
+        pushing: true,
+      })
+  ;
+});*/
 
 Template.Club_Page.onCreated(function onCreated() {
   this.autorun(() => {
@@ -70,6 +80,13 @@ Template.Club_Page.onRendered(function enableSemantic() {
   instance.$('select.dropdown').dropdown();
   instance.$('.ui.checkbox').checkbox();
   instance.$('.ui.radio.checkbox').checkbox();
+  // For sticky menu
+  instance.$('.ui.sticky')
+      .sticky({
+        context: '#club-menu-area',
+        pushing: true,
+      })
+  ;
 
   // secondary menu logic FIXME: does not work
   instance.$('select.ui.secondary.menu').ready(function () {
