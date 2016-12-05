@@ -56,7 +56,7 @@ Template.Add_Club_Page.events({
     if (instance.context.isValid()) {
       Clubs.insert(newClub);
       instance.messageFlags.set(displayErrorMessages, false);
-      FlowRouter.go('Home_Page');
+      FlowRouter.go('Browse_Clubs_Page');
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }

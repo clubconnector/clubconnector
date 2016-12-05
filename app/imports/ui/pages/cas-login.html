@@ -8,7 +8,6 @@
     <i class="dropdown icon"></i>
     <div class="menu">
       {{#if currentUser}}
-      <a class="{{ isActiveRoute 'Profile_Page'}} item" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
       <a class="ui item cas-logout">Logout</a>
       {{else}}
       <a class="ui item cas-login">Login</a>

@@ -8,13 +8,6 @@ FlowRouter.route('/', {
   },
 });
 
-FlowRouter.route('/home', {
-  name: 'Home_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Home_Page' });
-  },
-});
-
 FlowRouter.route('/browse-clubs', {
   name: 'Browse_Clubs_Page',
   action() {
@@ -40,20 +33,6 @@ FlowRouter.route('/club-page/123', {
   name: 'Club_Page',
   action() {
     BlazeLayout.render('App_Body', { main: 'Club_Page' });
-  },
-});
-
-FlowRouter.route('/user-home', {
-  name: 'User_Home_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'User_Home_Page' });
-  },
-});
-
-FlowRouter.route('/profile/', {
-  name: 'Profile_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Profile_Page' });
   },
 });
 
