@@ -14,6 +14,7 @@ Template.Home_Page.helpers({
 Template.Home_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Clubs');
+    this.subscribe('Users');
   });
 });
 
