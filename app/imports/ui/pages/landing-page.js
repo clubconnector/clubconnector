@@ -26,8 +26,9 @@ Template.Welcome.events({
       }
     };
     Meteor.loginWithCas(callback);
-    if(Meteor.user() !== undefined){
-    BlazeLayout.render('App_Body', { main: 'Home_Page' });}
+    if (Meteor.user() !== undefined) {
+      BlazeLayout.render('App_Body', { main: 'Browse_Clubs_Page' });
+    }
     return false;
   },
 });
@@ -37,10 +38,10 @@ Template.Welcome.helpers({
    * @returns {String} Returns the user who's logged in
    */
   home: function user() {
-    if(Meteor.user() !== undefined) {
-      FlowRouter.go('Home_Page');
+    if (Meteor.user() !== undefined) {
+      FlowRouter.go('Browse_Clubs_Page');
       // BlazeLayout.render('App_Body', { main: 'Home_Page' });
-  }
+    }
     return 0;
   },
 });
