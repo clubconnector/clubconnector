@@ -29,27 +29,6 @@ FlowRouter.route('/edit-club/:_id', {
   },
 });
 
-FlowRouter.route('/user-home', {
-  name: 'User_Home_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'User_Home_Page' });
-  },
-});
-
-FlowRouter.route('/profile/', {
-  name: 'Profile_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Profile_Page' });
-  },
-});
-
-FlowRouter.route('/calendar', {
-  name: 'Calendar',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Calendar' });
-  },
-});
-
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('App_Body', { main: 'App_Not_Found' });
