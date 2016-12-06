@@ -1,12 +1,18 @@
 import { Template } from 'meteor/templating';
+import { Meteor } from 'meteor/meteor';
 import { Clubs } from '../../api/clubs/clubs.js';
 import { Tags } from '../../api/tags/tags.js';
+import { Users } from '../../api/users/users.js';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 
 const dict = new ReactiveDict();
 dict.set('filters', '');
 dict.set('search', '');
+dict.set('favOnly', false);
+function user() {
+  return Users.findOne({ username: Meteor.user().profile.name },{});
+}
 Template.Browse_Clubs_Page.helpers({
 
   /**
@@ -15,6 +21,7 @@ Template.Browse_Clubs_Page.helpers({
   clubsList() {
     const filters = dict.get('filters').split(',');
     const terms = dict.get('search').split(' ');
+    const favOnly = dict.get('favOnly');
     const query = { $and: [
       { $or: [
         { orgName: { $all: _.map(terms, (val) => (new RegExp(val, 'i'))) } },
@@ -23,6 +30,10 @@ Template.Browse_Clubs_Page.helpers({
     ] };
     if (filters[0] !== '') {
       query.$and.push({ tags: { $all: filters } });
+    }
+    if (favOnly) {
+      console.log(user().favoriteClubs);
+      query.$and.push({ _id: { $in: user().favoriteClubs } });
     }
     const list = Clubs.find(query);
     return list;
@@ -33,15 +44,17 @@ Template.Browse_Clubs_Page.helpers({
   },
 });
 
-Template.registerHelper('updateFilter', (filters, search) => {
+Template.registerHelper('updateFilter', (filters, search, favOnly) => {
   dict.set('filters', filters);
   dict.set('search', search);
+  dict.set('favOnly', favOnly);
 });
 
 Template.Browse_Clubs_Page.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Clubs');
     this.subscribe('Tags');
+    this.subscribe('Users');
 
   });
 });
