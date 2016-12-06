@@ -31,29 +31,6 @@ Template.Welcome.events({
     };
     Meteor.loginWithCas(callback);
     return false;
-
-    // const type = event.target.type.value;
-    // const orgName = event.target.orgName.value;
-    // const acronym = event.target.acronym.value;
-    // const contactName = event.target.contactName.value;
-    // const contactEmail = event.target.contactEmail.value;
-    // const orgEmail = event.target.orgEmail.value;
-    // const orgWebsite = event.target.orgWebsite.value;
-    // const orgSocial = event.target.orgSocial.value;
-    //
-    // const newClub = { type, orgName, acronym, contactName, contactEmail, orgEmail, orgWebsite, orgSocial };
-    // // Clear out any old validation errors.
-    // instance.context.resetValidation();
-    // // Invoke clean so that newClub reflects what will be inserted.
-    // ClubsSchema.clean(newClub);
-    // // Determine validity.
-    // instance.context.validate(newClub);
-    // if (instance.context.isValid()) {
-    //   Clubs.insert(newClub);
-    //   instance.messageFlags.set(displayErrorMessages, false);
-    //   FlowRouter.go('Home_Page');
-    // } else {
-    //   instance.messageFlags.set(displayErrorMessages, true);
   },
 });
 
