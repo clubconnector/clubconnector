@@ -8,6 +8,7 @@ import { Tags } from '../../api/tags/tags.js';
  * @type {*[]}
  */
 const clubSeeds = [
+    // Academic/Professional
   {
     type: 'Academic/Professional',
     orgName: 'Academy of Creative Media Student Association',
@@ -19,7 +20,7 @@ const clubSeeds = [
     orgSocial: '',
     tags: ['Art'],
   },
-
+    // Ethnic/Cultural
   {
     type: 'Ethnic/Cultural',
     orgName: 'Islamic Society at University of Hawaii at Manoa',
@@ -31,6 +32,31 @@ const clubSeeds = [
     orgSocial: 'Facebook: IslamicSocietyatUH',
     tags: ['International'],
   },
+    // Fraternity/Sorority
+  {
+    type: 'Fraternity/Sorority',
+    orgName: 'Alpha Gamma Delta',
+    acronym: '',
+    contactName: 'Dani Mullin',
+    contactEmail: 'mdmullin@hawaii.edu',
+    orgEmail: 'agdhawaii@gmail.com',
+    orgWebsite: 'hawaii.alphagammadelta.org',
+    orgSocial: 'Facebook: Alpha Gamma Delta Hawaii',
+    tags: ['Honorary'],
+  },
+    // Honorary Society
+  {
+    type: 'Ethnic/Cultural',
+    orgName: 'Islamic Society at University of Hawaii at Manoa',
+    acronym: '',
+    contactName: 'Meriam Salameh',
+    contactEmail: 'meriams@hawaii.edu',
+    orgEmail: 'isuh@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: 'Facebook: IslamicSocietyatUH',
+    tags: ['International'],
+  },
+    // Leisure/ Recreational
   {
     type: 'Leisure/Recreational',
     orgName: 'Theatre and Dance Association',
@@ -52,6 +78,54 @@ const clubSeeds = [
     orgWebsite: '',
     orgSocial: 'FB: safa at uh manoa',
     tags: ['Outdoors'],
+  },
+    // Religious/Spiritual
+  {
+    type: 'Ethnic/Cultural',
+    orgName: 'Islamic Society at University of Hawaii at Manoa',
+    acronym: '',
+    contactName: 'Meriam Salameh',
+    contactEmail: 'meriams@hawaii.edu',
+    orgEmail: 'isuh@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: 'Facebook: IslamicSocietyatUH',
+    tags: ['International'],
+  },
+    // Service
+  {
+    type: 'Ethnic/Cultural',
+    orgName: 'Islamic Society at University of Hawaii at Manoa',
+    acronym: '',
+    contactName: 'Meriam Salameh',
+    contactEmail: 'meriams@hawaii.edu',
+    orgEmail: 'isuh@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: 'Facebook: IslamicSocietyatUH',
+    tags: ['International'],
+  },
+    // Sports/Leisure
+  {
+    type: 'Ethnic/Cultural',
+    orgName: 'Islamic Society at University of Hawaii at Manoa',
+    acronym: '',
+    contactName: 'Meriam Salameh',
+    contactEmail: 'meriams@hawaii.edu',
+    orgEmail: 'isuh@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: 'Facebook: IslamicSocietyatUH',
+    tags: ['International'],
+  },
+    // Student Affairs
+  {
+    type: 'Ethnic/Cultural',
+    orgName: 'Islamic Society at University of Hawaii at Manoa',
+    acronym: '',
+    contactName: 'Meriam Salameh',
+    contactEmail: 'meriams@hawaii.edu',
+    orgEmail: 'isuh@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: 'Facebook: IslamicSocietyatUH',
+    tags: ['International'],
   },
 
 ];
