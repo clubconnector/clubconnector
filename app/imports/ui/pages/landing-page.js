@@ -1,6 +1,8 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
-import { Users } from '../../api/users/users.js';
+import { ReactiveDict } from 'meteor/reactive-dict';
+import { Users, UsersSchema } from '../../api/users/users.js';
+import { _ } from 'meteor/underscore';
 
 
 Template.Welcome.events({
@@ -60,11 +62,12 @@ Template.Welcome.helpers({
    * @returns {String} Returns the user who's logged in
    */
   home: function user() {
-    const username = Meteor.user().profile.name;
-    console.log(username);
-    if(Meteor.user() !== null) {
-      FlowRouter.go('Browse_Clubs_Page');
+    const something = Meteor.user().profile.name;
+    if(Users.findOne({ username: Meteor.user().profile.name }, {}) !== undefined) {
+      const newUser = { username: something };
+      Users.insert(newUser);
     }
+    FlowRouter.go('Browse_Clubs_Page');
     return 0;
   },
 });
