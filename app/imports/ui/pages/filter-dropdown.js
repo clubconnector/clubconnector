@@ -37,7 +37,6 @@ Template.Filter_Dropdown.events({
   },
   'change #showFavorites'(event) {
     const val = event.target.checked;
-    console.log(val);
     dict.set('favOnly', val);
   },
 });

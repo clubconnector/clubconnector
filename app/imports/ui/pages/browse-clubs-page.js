@@ -10,9 +10,23 @@ const dict = new ReactiveDict();
 dict.set('filters', '');
 dict.set('search', '');
 dict.set('favOnly', false);
+
 function user() {
-  return Users.findOne({ username: Meteor.user().profile.name },{});
+  return Users.findOne({ username: Meteor.user().profile.name }, {});
 }
+
+function isFavorite(clubname) {
+  return _.contains(user().favoriteClubs, clubname);
+}
+
+function toggleFav(clubName) {
+  if (isFavorite(clubName)) {
+    Users.update(user()._id, { $pull: { favoriteClubs: clubName } });
+  } else {
+    Users.update(user()._id, { $addToSet: { favoriteClubs: clubName } });
+  }
+}
+
 Template.Browse_Clubs_Page.helpers({
 
   /**
@@ -32,8 +46,7 @@ Template.Browse_Clubs_Page.helpers({
       query.$and.push({ tags: { $all: filters } });
     }
     if (favOnly) {
-      console.log(user().favoriteClubs);
-      query.$and.push({ _id: { $in: user().favoriteClubs } });
+      query.$and.push({ orgName: { $in: user().favoriteClubs } });
     }
     const list = Clubs.find(query);
     return list;
@@ -41,6 +54,13 @@ Template.Browse_Clubs_Page.helpers({
   search() {
     const search = dict.get('search').split(' ');
     return search;
+  },
+  markFavorite(clubname) {
+    let result = '';
+    if (isFavorite(clubname)) {
+      result = 'yellow';
+    }
+    return result;
   },
 });
 
@@ -55,12 +75,17 @@ Template.Browse_Clubs_Page.onCreated(function onCreated() {
     this.subscribe('Clubs');
     this.subscribe('Tags');
     this.subscribe('Users');
-
   });
 });
-Template.Browse_Clubs_Page.events({
 
+Template.Browse_Clubs_Page.events({
+  'click .favoriteButton'(event, instance) {
+    const clubName = event.target.id;
+    $(event.target).toggleClass('yellow');
+    toggleFav(clubName);
+  },
 });
+
 Template.Browse_Clubs_Page.onRendered(function enableDropdown() {
 
 });

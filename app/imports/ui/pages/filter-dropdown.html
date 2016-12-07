@@ -1,12 +1,14 @@
 <template name="Filter_Dropdown">
   <div class="ui stackable compact secondary menu">
 
+    {{#if currentUser}}
     <div class="item">
       <div class="ui checkbox">
         <input type="checkbox" id="showFavorites">
         <label>Only show favorite clubs</label>
       </div>
     </div>
+    {{/if}}
     <div class="item">
       <div class="ui icon input">
         <input class="searchClubs" type="search" placeholder="Search for a club">
