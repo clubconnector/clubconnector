@@ -1,12 +1,21 @@
 <template name="Filter_Dropdown">
-  <div class="ui grid container">
-    <div class="ui four wide column">
+  <div class="ui stackable compact secondary menu">
+
+    {{#if currentUser}}
+    <div class="item">
+      <div class="ui checkbox">
+        <input type="checkbox" id="showFavorites">
+        <label>Only show favorite clubs</label>
+      </div>
+    </div>
+    {{/if}}
+    <div class="item">
       <div class="ui icon input">
         <input class="searchClubs" type="search" placeholder="Search for a club">
         <i class="search link icon"></i>
       </div>
     </div>
-    <div class="ui twelve wide column">
+    <div class="item">
       <div class="ui multiple search selection dropdown" id="filterDropdown">
         <input name="filters" type="hidden" id="filters">
         <div class="default text">Add Filters...</div>
@@ -18,7 +27,8 @@
         </div>
       </div>
     </div>
+
   </div>
-  {{updateFilter filters search}}
+  {{updateFilter filters search favOnly}}
 
 </template>

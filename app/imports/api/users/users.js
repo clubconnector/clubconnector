@@ -18,7 +18,7 @@ export const UsersSchema = new SimpleSchema({
   },
   favoriteClubs: {
     label: 'favoriteClubs',
-    type: [ClubsSchema],
+    type: [String],
     optional: false,
     max: 50,
     defaultValue: [],
@@ -38,7 +38,7 @@ export const UsersSchema = new SimpleSchema({
   },
   managedClubs: {
     label: 'managedClubs',
-    type: [ClubsSchema],
+    type: [String],
     optional: false,
     max: 50,
     defaultValue: [],
