@@ -44,6 +44,7 @@ Template.Welcome.helpers({
       const newUser = { username: something };
       Users.insert(newUser);
     }
+    console.log(Users.fetch);
     FlowRouter.go('Browse_Clubs_Page');
     return 0;
   },
