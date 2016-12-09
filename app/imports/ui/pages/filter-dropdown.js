@@ -5,6 +5,7 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 const dict = new ReactiveDict();
 dict.set('filters', '');
 dict.set('search', '');
+dict.set('favOnly', false);
 Template.Filter_Dropdown.helpers({
 
   /**
@@ -19,6 +20,9 @@ Template.Filter_Dropdown.helpers({
   search() {
     return dict.get('search');
   },
+  favOnly() {
+    return dict.get('favOnly');
+  },
 });
 
 Template.Filter_Dropdown.onCreated(function onCreated() {
@@ -30,6 +34,10 @@ Template.Filter_Dropdown.events({
   'keyup .searchClubs, keydown .searchClubs'(event) {
     const val = event.target.value;
     dict.set('search', val);
+  },
+  'change #showFavorites'(event) {
+    const val = event.target.checked;
+    dict.set('favOnly', val);
   },
 });
 Template.Filter_Dropdown.onRendered(function enableDropdown() {

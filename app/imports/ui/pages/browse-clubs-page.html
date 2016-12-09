@@ -6,8 +6,8 @@
       <div class="row">
       {{> Filter_Dropdown}}
       </div>
-    <div class="ui  row">
-      <div id="clubs" class="ui  grid container">
+    <div class="ui row">
+      <div id="clubs" class="ui grid container">
         {{#each club in clubsList}}
           <div class="five wide column">
             <div class="ui fluid card">
@@ -37,12 +37,12 @@
                   {{club.contactName}}
                   </span>
               </div>
-
-              <div class="ui bottom attached button">
-                <i class="edit icon"></i>
-                <a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a>
+              <div class ="ui bottom attached segment">
+                {{#if currentUser}}
+                <i title="Favorite" class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton" id="{{club.orgName}}"></i>
+                {{/if}}
+                <button class ="ui button">View profile</button>
               </div>
-
             </div>
           </div>
         {{/each}}

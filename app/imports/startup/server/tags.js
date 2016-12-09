@@ -24,6 +24,24 @@ const tagsSeeds = [
   {
     name: 'Music',
   },
+  {
+    name: 'Sports',
+  },
+  {
+    name: 'Service',
+  },
+  {
+    name: 'Religious',
+  },
+  {
+    name: 'Honorary',
+  },
+  {
+    name: 'Student Affairs',
+  },
+  {
+    name: 'Fraternity',
+  },
 ];
 
 /**
