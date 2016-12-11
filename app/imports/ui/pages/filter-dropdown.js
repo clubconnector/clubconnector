@@ -9,7 +9,7 @@ const dict = new ReactiveDict();
 dict.set('filters', '');
 dict.set('search', '');
 dict.set('favOnly', false);
-
+dict.set('loggedIn', false);
 function user() {
   let result = null;
   if (Meteor.user()) {
@@ -73,8 +73,24 @@ Template.Filter_Dropdown.onRendered(function enableDropdown() {
       dict.set('filters', value);
     },
   });
-  if (user()) {
+  if (Meteor.user()) {
     dict.set('filters', user().defaultFilters.join(','));
     dd.dropdown('set selected', dict.get('filters'));
+    dict.set('loggedIn', true);
   }
+  this.autorun(function checkUser() {
+    if (Meteor.user()) {
+      if (!dict.get('loggedIn')) {
+        dict.set('loggedIn', true);
+        if (dd.dropdown('get value') === '') {
+          dict.set('filters', user().defaultFilters.join(','));
+          dd.dropdown('set selected', dict.get('filters'));
+        }
+      }
+    } else {
+      if (dict.get('loggedIn')) {
+        dict.set('loggedIn', false);
+      }
+    }
+  });
 });

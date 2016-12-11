@@ -4,12 +4,8 @@
 
     {{#if Template.subscriptionsReady}}
       <div class="row">
-        {{#if currentUser}}
-        {{> Filter_Dropdown}}
-        {{else}}
-          {{> Filter_Dropdown}}
 
-        {{/if}}
+        {{> Filter_Dropdown}}
       </div>
       <div class="ui row">
         <div id="clubs" class="ui grid container">
