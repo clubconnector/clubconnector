@@ -39,13 +39,19 @@ Template.Welcome.helpers({
    * @returns {String} Returns the user who's logged in
    */
   home: function user() {
-    const something = Meteor.user().profile.name;
-    if(Users.findOne({ username: Meteor.user().profile.name }, {}) !== undefined) {
-      const newUser = { username: something };
+    const name = Meteor.user().profile.name;
+    if(Users.findOne({ username: name }, {}) === undefined) {
+      const newUser = { username: name };
       Users.insert(newUser);
     }
-    console.log(Users.fetch);
-    FlowRouter.go('Browse_Clubs_Page');
-    return 0;
+    const temp = Users.findOne({ username: name });
+    if(temp.TOS === false) {
+      console.log(Users.find());
+      FlowRouter.go('TOS');
+    }
+    else {
+      FlowRouter.go('Browse_Clubs_Page');
+    }
+    return false;
   },
 });
