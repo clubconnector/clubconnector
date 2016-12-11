@@ -40,6 +40,7 @@ Template.Browse_Clubs_Page.helpers({
       { $or: [
         { orgName: { $all: _.map(terms, (val) => (new RegExp(val, 'i'))) } },
         { acronym: { $all: _.map(terms, (val) => (new RegExp(val, 'i'))) } },
+        { contactName: { $all: _.map(terms, (val) => (new RegExp(val, 'i'))) } },
       ] },
     ] };
     if (filters[0] !== '') {
