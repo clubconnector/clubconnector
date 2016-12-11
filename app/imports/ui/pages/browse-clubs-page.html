@@ -4,173 +4,53 @@
 
     {{#if Template.subscriptionsReady}}
       <div class="row">
-      {{> Filter_Dropdown}}
+
+        {{> Filter_Dropdown}}
       </div>
-    <div class="ui row">
-      <div id="clubs" class="ui grid container">
-        {{#each club in clubsList}}
-          <div class="five wide column">
-            <div class="ui fluid card">
-              <div class="image">
-                <img src="/images/CR.jpg">
-              </div>
-              <div class="content">
-                <thead>
-                <th>{{club.orgName}}</th>
-                </thead>
-                <tbody>
-                <tr>
-                  <div>{{club.type}}</div>
-                </tr>
-                </tbody>
-                <div class="description">
-                  Description
+      <div class="ui row">
+        <div id="clubs" class="ui grid container">
+          {{#each club in clubsList}}
+            <div class="five wide column">
+              <div class="ui fluid card">
+                <div class="image">
+                  <img src="{{club.imgUrl}}">
                 </div>
-              </div>
-              <div class="extra content">
+                <div class="content">
+                  <thead>
+                  <th>{{club.orgName}}</th>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <div>{{club.type}}</div>
+                  </tr>
+                  </tbody>
+                  <div class="description">
+                    Description
+                  </div>
+                </div>
+                <div class="extra content">
                <span class="left floated">
                 <th>Acronym</th>
                  {{club.acronym}}
               </span>
-                <span class="right floated">
+                  <span class="right floated">
                   <th>Contact Person</th>
-                  {{club.contactName}}
+                    {{club.contactName}}
                   </span>
-              </div>
-              <div class ="ui bottom attached segment">
-                {{#if currentUser}}
-                <i title="Favorite" class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton" id="{{club.orgName}}"></i>
-                {{/if}}
-                <button class ="ui button">View profile</button>
+                </div>
+                <div class="ui bottom attached segment">
+                  {{#if currentUser}}
+                    <i title="Favorite"
+                       class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton"
+                       id="{{club.orgName}}"></i>
+                  {{/if}}
+                  <button class="ui button">View profile</button>
+                </div>
               </div>
             </div>
-          </div>
-        {{/each}}
-        <!--
-
-    <div class="column">
-      <div class="ui fluid card">
-        <div class="image">
-          <img src="/images/AM.jpg">
+          {{/each}}
         </div>
-        <div class="content">
-
-          <thead>
-          <th>Student Alliance for Animals</th>
-          </thead>
-
-          <tbody>
-          <tr>
-            <div>Political</div>
-          </tr>
-          </tbody>
-
-          <div class="description">
-            Description
-          </div>
-        </div>
-        <div class="extra content">
-       <span class="left floated">
-         <th>Acronym</th>
-        SAFA
-      </span>
-          <span class="right floated">
-            <th>Contact Person</th>
-        Shauna Leake
-      </span>
-        </div>
-
-        <div class="ui bottom attached button">
-          <i class="edit icon"></i>
-          <a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a>
-        </div>
-
       </div>
-    </div>
-
-    <div class="column">
-      <div class="ui fluid card">
-        <div class="image">
-          <img src="images/DC.jpg">
-        </div>
-        <div class="content">
-
-          <thead>
-          <th>Theatre and Dance Association</th>
-          </thead>
-
-          <tbody>
-          <tr>
-            <div>Leisure/Recreational</div>
-          </tr>
-          </tbody>
-
-          <div class="description">
-            Description
-          </div>
-        </div>
-        <div class="extra content">
-      <span class="left floated">
-        <th>Acronym</th>
-        TADA
-      </span>
-          <span class="right floated">
-            <th>Contact Person</th>
-        Michelle Huynh
-      </span>
-        </div>
-
-        <div class="ui bottom attached button">
-          <i class="edit icon"></i>
-          <a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a>
-        </div>
-
-      </div>
-    </div>
--->
-
-      </div>
-</div>
-
-      <!--
-    {{#if Template.subscriptionsReady}}
-
-      <table class="ui celled table">
-        <thead>
-        <tr>
-          <th>Type</th>
-          <th>Name of Organization</th>
-          <th>Acronym</th>
-          <th>Contact Person Name</th>
-          <th>Contact Person Email</th>
-          <th>Club Email</th>
-          <th>Club Website</th>
-          <th>Club Social Media</th>
-          <th>Edit Club Info</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        {{#each club in clubsList}}
-          <tr>
-            <td>{{club.type}}</td>
-            <td>{{club.orgName}}</td>
-            <td>{{club.acronym}}</td>
-            <td>{{club.contactName}}</td>
-            <td>{{club.contactEmail}}</td>
-            <td>{{club.orgEmail}}</td>
-            <td>{{club.orgWebsite}}</td>
-            <td>{{club.orgSocial}}</td>
-            <td><a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a></td>
-
-          </tr>
-        {{/each}}
-        </tbody>
-      </table>
-    {{else}}
-        {{> Loading}}
-      {{/if}}
-    -->
 
     {{else}}
       {{> Loading}}

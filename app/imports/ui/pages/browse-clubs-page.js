@@ -81,11 +81,11 @@ Template.Browse_Clubs_Page.onCreated(function onCreated() {
 Template.Browse_Clubs_Page.events({
   'click .favoriteButton'(event, instance) {
     const clubName = event.target.id;
-    $(event.target).toggleClass('yellow');
+    instance.$(event.target).toggleClass('yellow');
     toggleFav(clubName);
   },
 });
 
-Template.Browse_Clubs_Page.onRendered(function enableDropdown() {
+Template.Browse_Clubs_Page.onRendered(function go() {
 
 });

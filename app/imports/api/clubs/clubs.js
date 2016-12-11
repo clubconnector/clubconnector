@@ -65,6 +65,13 @@ export const ClubsSchema = new SimpleSchema({
     optional: true,
     max: 50,
   },
+  imgUrl: {
+    label: 'imgUrl',
+    type: String,
+    optional: false,
+    max: 50,
+    defaultValue: '/images/profile.png',
+  },
 });
 
 Clubs.attachSchema(ClubsSchema);

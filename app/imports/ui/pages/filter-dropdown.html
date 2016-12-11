@@ -1,34 +1,38 @@
 <template name="Filter_Dropdown">
   <div class="ui stackable compact secondary menu">
-
-    {{#if currentUser}}
-    <div class="item">
-      <div class="ui checkbox">
-        <input type="checkbox" id="showFavorites">
-        <label>Only show favorite clubs</label>
+    <div class="ui grid">
+      <div class="ui row">
+          <div class="item">
+            <div class="ui checkbox">
+              <input type="checkbox" id="showFavorites" {{disable}}>
+              <label>Only show favorite clubs</label>
+            </div>
+          </div>
+        <div class="item">
+          <div class="ui icon input">
+            <input class="searchClubs" type="search" placeholder="Search for a club">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ui multiple search selection dropdown" id="filterDropdown">
+            <input name="filters" type="hidden" id="filters">
+            <div class="default text">Add Filters...</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              {{#each filter in filterList}}
+                <div class="item" data-value="{{filter.name}}">{{filter.name}}</div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    {{/if}}
-    <div class="item">
-      <div class="ui icon input">
-        <input class="searchClubs" type="search" placeholder="Search for a club">
-        <i class="search link icon"></i>
-      </div>
-    </div>
-    <div class="item">
-      <div class="ui multiple search selection dropdown" id="filterDropdown">
-        <input name="filters" type="hidden" id="filters">
-        <div class="default text">Add Filters...</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          {{#each filter in filterList}}
-            <div class="item" data-value="{{filter.name}}">{{filter.name}}</div>
-          {{/each}}
+      <div class="ui row">
+        <div class="item">
+          <button class="ui button" id="saveFilters" {{disable}}>Save Filters</button>
         </div>
       </div>
     </div>
-
   </div>
   {{updateFilter filters search favOnly}}
-
 </template>

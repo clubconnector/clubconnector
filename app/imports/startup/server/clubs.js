@@ -19,6 +19,7 @@ const clubSeeds = [
     orgWebsite: '',
     orgSocial: '',
     tags: ['Art'],
+    imgUrl: '/images/CR.jpg',
   },
     // Ethnic/Cultural
   {
@@ -67,6 +68,8 @@ const clubSeeds = [
     orgWebsite: '',
     orgSocial: 'Facebook: TADA UHM',
     tags: ['Art', 'Music'],
+    imgUrl: '/images/DC.jpg',
+
   },
     //
   {
@@ -79,6 +82,8 @@ const clubSeeds = [
     orgWebsite: '',
     orgSocial: 'Facebook: safa at uh manoa',
     tags: ['Outdoors'],
+    imgUrl: '/images/AM.jpg',
+
   },
     // Religious/Spiritual
   {
