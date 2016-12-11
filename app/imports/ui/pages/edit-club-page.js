@@ -1,6 +1,7 @@
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
+import { Tracker } from 'meteor/tracker';
 import { _ } from 'meteor/underscore';
 import { Clubs, ClubsSchema } from '../../api/clubs/clubs.js';
 

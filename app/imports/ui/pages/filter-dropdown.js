@@ -1,11 +1,23 @@
 import { Template } from 'meteor/templating';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Meteor } from 'meteor/meteor';
 import { Tags } from '../../api/tags/tags.js';
+import { Users } from '../../api/users/users.js';
 import { ReactiveDict } from 'meteor/reactive-dict';
 
 const dict = new ReactiveDict();
 dict.set('filters', '');
 dict.set('search', '');
 dict.set('favOnly', false);
+
+function user() {
+  let result = null;
+  if (Meteor.user()) {
+    result = Users.findOne({ username: Meteor.user().profile.name }, {});
+  }
+  return result;
+}
+
 Template.Filter_Dropdown.helpers({
 
   /**
@@ -23,13 +35,22 @@ Template.Filter_Dropdown.helpers({
   favOnly() {
     return dict.get('favOnly');
   },
+  disable() {
+    let result = 'disabled';
+    if (Meteor.user()) {
+      result = '';
+    }
+    return result;
+  },
 });
 
 Template.Filter_Dropdown.onCreated(function onCreated() {
   this.autorun(() => {
     this.subscribe('Tags');
+    this.subscribe('Users');
   });
 });
+
 Template.Filter_Dropdown.events({
   'keyup .searchClubs, keydown .searchClubs'(event) {
     const val = event.target.value;
@@ -39,11 +60,21 @@ Template.Filter_Dropdown.events({
     const val = event.target.checked;
     dict.set('favOnly', val);
   },
+  'click #saveFilters'(event) {
+    event.preventDefault();
+    Users.update(user()._id, { $set: { defaultFilters: (dict.get('filters')).split(',') } });
+  },
 });
+
 Template.Filter_Dropdown.onRendered(function enableDropdown() {
-  this.$('#filterDropdown.ui.multiple.selection.dropdown').dropdown({
+  const dd = this.$('#filterDropdown.ui.multiple.selection.dropdown');
+  dd.dropdown({
     onChange(value) {
       dict.set('filters', value);
     },
   });
+  if (user()) {
+    dict.set('filters', user().defaultFilters.join(','));
+    dd.dropdown('set selected', dict.get('filters'));
+  }
 });
