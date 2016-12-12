@@ -4,38 +4,40 @@
 
     {{#if Template.subscriptionsReady}}
       <div class="row">
-      {{> Filter_Dropdown}}
+
+        {{> Filter_Dropdown}}
       </div>
-    <div class="ui row">
-      <div id="clubs" class="ui grid container">
-        {{#each club in clubsList}}
-          <div class="five wide column">
-            <div class="ui fluid card">
-              <div class="image">
-                <img src="/images/CR.jpg">
-              </div>
-              <div class="content">
-                <thead>
-                <th>{{club.orgName}}</th>
-                </thead>
-                <tbody>
-                <tr>
-                  <div>{{club.type}}</div>
-                </tr>
-                </tbody>
-                <div class="description">
-                  Description
+      <div class="ui row">
+        <div id="clubs" class="ui grid container">
+          {{#each club in clubsList}}
+            <div class="five wide column">
+              <div class="ui fluid card">
+                <div class="image">
+                  <img src="{{club.imgUrl}}">
                 </div>
-              </div>
-              <div class="extra content">
+                <div class="content">
+                  <thead>
+                  <th>{{club.orgName}}</th>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <div>{{club.type}}</div>
+                  </tr>
+                  </tbody>
+                  <div class="description">
+                    Description
+                  </div>
+                </div>
+                <div class="extra content">
                <span class="left floated">
                 <th>Acronym</th>
                  {{club.acronym}}
               </span>
-                <span class="right floated">
+                  <span class="right floated">
                   <th>Contact Person</th>
-                  {{club.contactName}}
+                    {{club.contactName}}
                   </span>
+<!--
               </div>
               <div class ="ui bottom attached segment">
                 {{#if currentUser}}
@@ -55,6 +57,23 @@
 
       </div>
 </div>
+-->
+                </div>
+                <div class="ui bottom attached segment">
+                  {{#if currentUser}}
+                    <i title="Favorite"
+                       class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton"
+                       id="{{club.orgName}}"></i>
+                  {{/if}}
+                  <button class="ui button">View profile</button>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+
     {{else}}
       {{> Loading}}
     {{/if}}
