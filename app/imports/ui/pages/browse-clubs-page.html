@@ -42,6 +42,12 @@
                 <i title="Favorite" class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton" id="{{club.orgName}}"></i>
                 {{/if}}
                 <a class="{{ isActiveRoute 'Club_Page'}} ui button" href="{{ pathFor 'Club_Page' }}">View profile</a>
+                {{#if siteAdmin}}
+                <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">Edit</a>
+                /
+                <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">Delete</a>
+
+                  {{/if}}
               </div>
             </div>
           </div>
