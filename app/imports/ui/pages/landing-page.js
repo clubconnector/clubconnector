@@ -44,9 +44,9 @@ Template.Welcome.helpers({
       const newUser = { username: name };
       Users.insert(newUser);
     }
+
     const temp = Users.findOne({ username: name });
     if(temp.TOS === false) {
-      console.log(Users.find());
       FlowRouter.go('TOS');
     }
     else {
