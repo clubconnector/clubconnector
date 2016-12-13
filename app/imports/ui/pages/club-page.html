@@ -1,0 +1,57 @@
+<template name="Club_Page">
+
+  {{#if Template.subscriptionsReady}}
+    <div class="club-page-wrapper">
+      <a class="ui huge right corner label">
+        <i class="star icon"></i>
+      </a>
+      <div class="ui grid">
+        <div id="club-menu-area" class="four wide column">
+          <div id="sticky-menu-container" class="ui sticky">
+            <div id="club-page-menu" class="ui secondary fluid vertical pointing large green labeled icon menu">
+              <a class="item aboutTab {{aboutActiveClass}}">
+                <i class="info circle icon"></i>
+                About
+              </a>
+              <a class="item membersTab {{membersActiveClass}}">
+                <i class="user icon"></i>
+                Members
+              </a>
+              <a class="item eventsTab {{eventsActiveClass}}">
+                <i class="calendar outline icon"></i>
+                Events
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="club-main-content" class="twelve wide column">
+
+          {{#if aboutActiveClass}}
+            {{> Club_About_Page}}
+          {{/if}}
+          {{#if membersActiveClass}}
+            {{> Club_Members_Page}}
+          {{/if}}
+          {{#if eventsActiveClass}}
+            {{> Calendar}}
+          {{/if}}
+
+        </div>
+      </div>
+    </div>
+
+  {{else}}
+    {{> Loading}}
+  {{/if}}
+
+  <script>
+    this.$('.ui.sticky')
+        .sticky({
+          context: '#club-menu-area',
+          pushing: true,
+        })
+    ;
+  </script>
+
+</template>

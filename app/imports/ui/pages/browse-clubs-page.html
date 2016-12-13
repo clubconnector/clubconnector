@@ -1,49 +1,57 @@
 <template name="Browse_Clubs_Page">
-  <div class="ui container">
+  <div class="ui grid container segment">
+
 
     {{#if Template.subscriptionsReady}}
-      <div class="ui fluid multiple selection dropdown">
-        <div class="text">Select</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          {{#each filter in filterList}}
-            <div class="item" data-value="{{filter.name}}">{{filter.name}}</div>
+      <div class="row">
+
+        {{> Filter_Dropdown}}
+      </div>
+      <div class="ui row">
+        <div id="clubs" class="ui grid container">
+          {{#each club in clubsList}}
+            <div class="five wide column">
+              <div class="ui fluid card">
+                <div class="image">
+                  <img src="{{club.imgUrl}}">
+                </div>
+                <div class="content">
+                  <thead>
+                  <th>{{club.orgName}}</th>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <div>{{club.type}}</div>
+                  </tr>
+                  </tbody>
+                  <div class="description">
+                    Description
+                  </div>
+                </div>
+                <div class="extra content">
+               <span class="left floated">
+                <th>Acronym</th>
+                 {{club.acronym}}
+              </span>
+                  <span class="right floated">
+                  <th>Contact Person</th>
+                    {{club.contactName}}
+                  </span>
+                </div>
+                <div class="ui bottom attached segment">
+                  {{#if currentUser}}
+                    <i title="Favorite"
+                       class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton"
+                       id="{{club.orgName}}"></i>
+                  {{/if}}
+                  <button class="ui button">View profile</button>
+                </div>
+              </div>
+            </div>
           {{/each}}
         </div>
       </div>
 
-      <table class="ui celled table">
-        <thead>
-        <tr>
-          <th>Type</th>
-          <th>Name of Organization</th>
-          <th>Acronym</th>
-          <th>Contact Person Name</th>
-          <th>Contact Person Email</th>
-          <th>Club Email</th>
-          <th>Club Website</th>
-          <th>Club Social Media</th>
-          <th>Edit Club Info</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        {{#each club in clubsList}}
-          <tr>
-            <td>{{club.type}}</td>
-            <td>{{club.orgName}}</td>
-            <td>{{club.acronym}}</td>
-            <td>{{club.contactName}}</td>
-            <td>{{club.contactEmail}}</td>
-            <td>{{club.orgEmail}}</td>
-            <td>{{club.orgWebsite}}</td>
-            <td>{{club.orgSocial}}</td>
-            <td><a href="{{pathFor 'Edit_Club_Page' _id=club._id}}">Edit</a></td>
-
-          </tr>
-        {{/each}}
-        </tbody>
-      </table>
     {{else}}
       {{> Loading}}
     {{/if}}

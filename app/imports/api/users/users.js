@@ -16,37 +16,16 @@ export const UsersSchema = new SimpleSchema({
     optional: false,
     max: 30,
   },
-  firstname: {
-    label: 'firstname',
-    type: String,
-    optional: false,
-    max: 30,
-    defaultValue: '',
-  },
-  lastname: {
-    label: 'lastname',
-    type: String,
-    optional: false,
-    max: 30,
-    defaultValue: '',
-  },
-  majors: {
-    label: 'majors',
-    type: [String],
-    optional: false,
-    max: 50,
-    defaultValue: [],
-  },
   favoriteClubs: {
     label: 'favoriteClubs',
-    type: [ClubsSchema],
+    type: [String],
     optional: false,
     max: 50,
     defaultValue: [],
   },
   defaultFilters: {
     label: 'defaultFilters',
-    type: [TagsSchema],
+    type: [String],
     optional: false,
     max: 50,
     defaultValue: [],
@@ -59,10 +38,16 @@ export const UsersSchema = new SimpleSchema({
   },
   managedClubs: {
     label: 'managedClubs',
-    type: [ClubsSchema],
+    type: [String],
     optional: false,
     max: 50,
     defaultValue: [],
+  },
+  TOS: {
+    label: 'TOS',
+    type: Boolean,
+    optional: false,
+    defaultValue: false,
   },
 });
 

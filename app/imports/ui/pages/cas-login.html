@@ -1,5 +1,5 @@
 <template name="Cas_Login">
-  <div class="ui simple borderless dropdown right item">
+  <div class="ui simple borderless dropdown right item" id="#accountDropdown">
     {{#if currentUser}}
     <div class="text">{{ user }}</div>
     {{else}}
@@ -8,7 +8,6 @@
     <i class="dropdown icon"></i>
     <div class="menu">
       {{#if currentUser}}
-      <a class="{{ isActiveRoute 'Profile_Page'}} item" href="{{ pathFor 'Profile_Page' }}">Profile Page</a>
       <a class="ui item cas-logout">Logout</a>
       {{else}}
       <a class="ui item cas-login">Login</a>

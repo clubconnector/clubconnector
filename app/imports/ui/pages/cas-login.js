@@ -1,5 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Users } from '../../api/users/users.js';
 
 Template.Cas_Login.events({
   /**
@@ -21,8 +23,8 @@ Template.Cas_Login.events({
   'click .cas-login': function casLogin(event, instance) {
     event.preventDefault();
     const callback = function loginCallback(error) {
-      if (error) {
-        console.log(error);
+      if (!error) {
+        FlowRouter.go('Browse_Clubs_Page');
       }
     };
     Meteor.loginWithCas(callback);
@@ -32,7 +34,7 @@ Template.Cas_Login.events({
 
 // Here's how to do the required initialization for Semantic UI dropdown menus.
 Template.Cas_Login.onRendered(function enableDropDown() {
-  this.$('.dropdown').dropdown({
+  this.$('#accountDropdown.dropdown').dropdown({
     action: 'select',
   });
 });
@@ -44,4 +46,10 @@ Template.Cas_Login.helpers({
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
+});
+
+Template.Cas_Login.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Users');
+  });
 });

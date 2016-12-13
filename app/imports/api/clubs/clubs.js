@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { TagsSchema } from '../tags/tags.js';
 
 /* eslint-disable object-shorthand */
 
@@ -8,6 +9,7 @@ export const Clubs = new Mongo.Collection('Clubs');
 /**
  * Create the schema for Clubs
  */
+
 export const ClubsSchema = new SimpleSchema({
   type: {
     label: 'type',
@@ -56,6 +58,19 @@ export const ClubsSchema = new SimpleSchema({
     type: String,
     optional: true,
     max: 50,
+  },
+  tags: {
+    label: 'tags',
+    type: [String],
+    optional: true,
+    max: 50,
+  },
+  imgUrl: {
+    label: 'imgUrl',
+    type: String,
+    optional: false,
+    max: 50,
+    defaultValue: '/images/profile.png',
   },
 });
 

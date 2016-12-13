@@ -8,10 +8,10 @@ FlowRouter.route('/', {
   },
 });
 
-FlowRouter.route('/home', {
-  name: 'Home_Page',
+FlowRouter.route('/tos', {
+  name: 'TOS',
   action() {
-    BlazeLayout.render('App_Body', { main: 'Home_Page' });
+    BlazeLayout.render('Landing_Page', { main: 'TOS' });
   },
 });
 
@@ -36,17 +36,10 @@ FlowRouter.route('/edit-club/:_id', {
   },
 });
 
-FlowRouter.route('/user-home', {
-  name: 'User_Home_Page',
+FlowRouter.route('/club-page/123', {
+  name: 'Club_Page',
   action() {
-    BlazeLayout.render('App_Body', { main: 'User_Home_Page' });
-  },
-});
-
-FlowRouter.route('/profile/', {
-  name: 'Profile_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Profile_Page' });
+    BlazeLayout.render('App_Body', { main: 'Club_Page' });
   },
 });
 

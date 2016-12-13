@@ -19,17 +19,36 @@ const tagsSeeds = [
     name: 'Business',
   },
   {
-    name: 'Foreign',
+    name: 'International',
   },
   {
     name: 'Music',
+  },
+  {
+    name: 'Sports',
+  },
+  {
+    name: 'Service',
+  },
+  {
+    name: 'Religious',
+  },
+  {
+    name: 'Honorary',
+  },
+  {
+    name: 'Student Affairs',
+  },
+  {
+    name: 'Fraternity',
   },
 ];
 
 /**
  * Initialize the Clubs collection if empty with seed data.
  */
-if (Tags.find().count() === 0) {
+if (Tags.find() !== tagsSeeds) {
+  Tags.remove({});
   _.each(tagsSeeds, function seedTags(tag) {
     Tags.insert(tag);
   });
