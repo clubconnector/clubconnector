@@ -2,12 +2,7 @@
   <div class="ui stackable compact secondary menu">
     <div class="ui grid">
       <div class="ui row">
-          <div class="item">
-            <div class="ui checkbox">
-              <input type="checkbox" id="showFavorites" {{disable}}>
-              <label>Only show favorite clubs</label>
-            </div>
-          </div>
+
         <div class="item">
           <div class="ui icon input">
             <input class="searchClubs" type="search" placeholder="Search for a club">
@@ -29,9 +24,23 @@
       </div>
       <div class="ui row">
         <div class="item">
-          <button class="ui button" id="saveFilters" {{disable}}>Save Filters</button>
+          <button class="ui button" id="saveFilters" title="Saved filters will auto-load when you log in" {{disable}}>Save Filters</button>
         </div>
+        <div class="item">
+          <div class="ui checkbox">
+            <input type="checkbox" id="showFavorites" {{disable}}>
+            <label>Only show favorite clubs</label>
+          </div>
+        </div>
+        {{#if disable}}
+        <div class="item">
+          <div class="ui warning message">
+            Please login to save preferences
+          </div>
+        </div>
+        {{/if}}
       </div>
+
     </div>
   </div>
   {{updateFilter filters search favOnly}}
