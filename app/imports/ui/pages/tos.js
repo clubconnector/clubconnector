@@ -18,7 +18,7 @@ Template.TOS.events({
    */
   'click .decline': function declineTOS(event) {
     event.preventDefault();
-    console.log('declined');
+    FlowRouter.go('Browse_Clubs_Page');
     return false;
   },
 
@@ -32,9 +32,7 @@ Template.TOS.events({
 
     const temp = Users.findOne({ username: Meteor.user().profile.name });
     Users.update({ _id: temp._id }, { $set: { TOS: true } });
-    console.log(Users.findOne({ _id:  temp._id }));
     FlowRouter.go('Browse_Clubs_Page');
-    console.log('accepted');
     return false;
   },
 });

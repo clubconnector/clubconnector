@@ -4,6 +4,11 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { Users, UsersSchema } from '../../api/users/users.js';
 import { _ } from 'meteor/underscore';
 
+Template.Welcome.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Users');
+  });
+});
 
 Template.Welcome.events({
   /**
@@ -30,6 +35,9 @@ Template.Welcome.events({
       }
     };
     Meteor.loginWithCas(callback);
+    // if(Meteor.user() !== null) {
+    //
+    // }
     return false;
   },
 });
@@ -40,11 +48,10 @@ Template.Welcome.helpers({
    */
   home: function user() {
     const name = Meteor.user().profile.name;
-    if(Users.findOne({ username: name }, {}) === undefined) {
+    if (Users.findOne({ username: name }, {}) === undefined) {
       const newUser = { username: name };
       Users.insert(newUser);
     }
-
     const temp = Users.findOne({ username: name });
     if(temp.TOS === false) {
       FlowRouter.go('TOS');
