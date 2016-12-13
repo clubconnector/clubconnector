@@ -12,9 +12,11 @@
           {{#each club in clubsList}}
             <div class="five wide column">
               <div class="ui fluid card">
+
                 <div class="image">
                   <img src="{{club.imgUrl}}">
                 </div>
+
                 <div class="content">
                   <thead>
                   <th>{{club.orgName}}</th>
@@ -28,6 +30,7 @@
                     Description
                   </div>
                 </div>
+
                 <div class="extra content">
                <span class="left floated">
                 <th>Acronym</th>
@@ -38,6 +41,7 @@
                     {{club.contactName}}
                   </span>
                 </div>
+
                 <div class="ui bottom attached segment">
                   {{#if currentUser}}
                     <i title="Favorite"
@@ -45,12 +49,43 @@
                        id="{{club.orgName}}"></i>
                   {{/if}}
                   <button class="ui button">View profile</button>
+
+                  {{#if currentUser}}
+                     {{#if currentAdmin}}
+                  <a class="{{ isActiveRoute 'Admin_Club_Page'}} ui item" href="{{ pathFor 'Admin_Club_Page' }}">Edit</a>
+                  /
+                  <a class="{{ isActiveRoute 'Admin_Club_Page'}} ui item" href="{{ pathFor 'Admin_Club_Page' }}">Delete</a>
+                     {{/if}}
+                  {{/if}}
                 </div>
+
+                <!--
+              </div>
+              <div class ="ui bottom attached segment">
+                {{#if currentUser}}
+                <i title="Favorite" class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton" id="{{club.orgName}}"></i>
+                {{/if}}
+                <a class="{{ isActiveRoute 'Club_Page'}} ui button" href="{{ pathFor 'Club_Page' }}">View profile</a>
+                {{#if siteAdmin}}
+                <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">Edit</a>
+                /
+                <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">Delete</a>
+
+                  {{/if}}
+              </div>
+            </div>
+          </div>
+        {{/each}}
+
+      </div>
+</div>
+-->
               </div>
             </div>
           {{/each}}
         </div>
       </div>
+
 
     {{else}}
       {{> Loading}}
