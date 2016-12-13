@@ -49,11 +49,14 @@
                        id="{{club.orgName}}"></i>
                   {{/if}}
                   <button class="ui button">View profile</button>
+
+                  {{#if currentUser}}
                      {{#if currentAdmin}}
                   <a class="{{ isActiveRoute 'Admin_Club_Page'}} ui item" href="{{ pathFor 'Admin_Club_Page' }}">Edit</a>
                   /
                   <a class="{{ isActiveRoute 'Admin_Club_Page'}} ui item" href="{{ pathFor 'Admin_Club_Page' }}">Delete</a>
                      {{/if}}
+                  {{/if}}
                 </div>
 
                 <!--
