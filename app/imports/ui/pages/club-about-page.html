@@ -5,7 +5,7 @@
     <div class="ui fluid container">
       <!--<h1 id="club-title" class="ui club dividing header">Association for Computing Machinery at Manoa
         (ACMANOA)</h1>-->
-      <h1 id="club-title" class="ui club dividing header">{{club.orgName}}</h1>
+      <h1 id="club-title" class="ui club dividing header">{{club.orgName}} {{#if club.acronym}}({{club.acronym}}){{/if}}</h1>
     </div>
 
     <img id="club-banner-image" class="ui image container" src="{{club.bannerimgUrl}}">
@@ -20,7 +20,7 @@
         <h3 class="ui club dividing header">Type</h3>
         <div class="ui club text">{{club.type}}</div>
       </div>
-
+  
       <div class="column">
         <h3 class="ui club dividing header">Contact Person</h3>
         <div class="row">
