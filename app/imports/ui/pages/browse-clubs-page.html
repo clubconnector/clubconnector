@@ -52,9 +52,9 @@
 
                   {{#if currentUser}}
                      {{#if currentAdmin}}
-                  <a class="{{ isActiveRoute 'Admin_Club_Page'}} ui item" href="{{ pathFor 'Admin_Club_Page' }}">Edit</a>
-                  /
-                  <a class="{{ isActiveRoute 'Admin_Club_Page'}} ui item" href="{{ pathFor 'Admin_Club_Page' }}">Delete</a>
+                  <a class="{{ isActiveRoute 'Edit_Club_Page'}} ui item" href="{{ pathFor 'Edit_Club_Page' }}/{{club._id}}">Edit</a>
+                 <!-- /
+                  <a class="{{ isActiveRoute 'Admin_Club_Page'}} ui item" href="{{ pathFor 'Admin_Club_Page' }}">Delete</a>-->
                      {{/if}}
                   {{/if}}
                 </div>

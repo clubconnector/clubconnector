@@ -24,7 +24,17 @@ Template.Cas_Login.events({
     event.preventDefault();
     const callback = function loginCallback(error) {
       if (!error) {
-        FlowRouter.go('Browse_Clubs_Page');
+        const name = Meteor.user().profile.name;
+        if (Users.findOne({ username: name }, {}) === undefined) {
+          const newUser = { username: name };
+          Users.insert(newUser);
+        }
+        const temp = Users.findOne({ username: name });
+        if (temp.TOS === false) {
+          FlowRouter.go('TOS');
+        } else {
+          FlowRouter.go('Browse_Clubs_Page');
+        }
       }
     };
     Meteor.loginWithCas(callback);

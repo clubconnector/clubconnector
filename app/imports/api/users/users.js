@@ -43,6 +43,12 @@ export const UsersSchema = new SimpleSchema({
     max: 50,
     defaultValue: [],
   },
+  TOS: {
+    label: 'TOS',
+    type: Boolean,
+    optional: false,
+    defaultValue: false,
+  },
 });
 
 Users.attachSchema(UsersSchema);

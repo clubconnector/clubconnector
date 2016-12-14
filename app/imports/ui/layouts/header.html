@@ -4,8 +4,8 @@
 
     <div class="ui container">
       <a class="item" href="{{pathFor 'Browse_Clubs_Page'}}">
-      <img class="ui image item"
-           src="/images/uhm_title_small.png">
+        <img class="ui image item"
+             src="/images/uhm_title_small.png">
       </a>
       <!--<div class="right menu">
         <div class="item">
@@ -21,11 +21,12 @@
   <div id="menu" class="ui inverted stackable github borderless menu">
     <div class="ui container">
       <a class="ui header item" href="{{pathFor 'Browse_Clubs_Page'}}"><h1>ClubConnector</h1></a>
-      <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse Clubs</a>
-     <!-- <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">View Club</a>-->
-{{#if currentUser}}
+      <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse
+        Clubs</a>
+      <!-- <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">View Club</a>-->
+      {{#if currentUser}}
       <a class="{{ isActiveRoute 'Add_Club_Page'}} ui item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
-{{/if}}
+      {{/if}}
       <div class="ui right item">{{> Cas_Login }}</div>
     </div>
   </div>

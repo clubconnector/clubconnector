@@ -8,6 +8,13 @@ FlowRouter.route('/', {
   },
 });
 
+FlowRouter.route('/tos', {
+  name: 'TOS',
+  action() {
+    BlazeLayout.render('Landing_Page', { main: 'TOS' });
+  },
+});
+
 FlowRouter.route('/browse-clubs', {
   name: 'Browse_Clubs_Page',
   action() {

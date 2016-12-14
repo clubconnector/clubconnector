@@ -26,4 +26,7 @@ import './filter-dropdown.html';
 import './filter-dropdown.js';
 
 import './landing-page.html';
-import './landing-page';
+import './landing-page.js';
+
+import './tos.html';
+import './tos.js';

@@ -1,5 +1,14 @@
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { ReactiveDict } from 'meteor/reactive-dict';
+import { Users, UsersSchema } from '../../api/users/users.js';
+import { _ } from 'meteor/underscore';
+
+Template.Welcome.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Users');
+  });
+});
 
 Template.Welcome.events({
   /**
@@ -26,9 +35,9 @@ Template.Welcome.events({
       }
     };
     Meteor.loginWithCas(callback);
-    if (Meteor.user() !== undefined) {
-      BlazeLayout.render('App_Body', { main: 'Browse_Clubs_Page' });
-    }
+    // if(Meteor.user() !== null) {
+    //
+    // }
     return false;
   },
 });
@@ -37,11 +46,19 @@ Template.Welcome.helpers({
   /**
    * @returns {String} Returns the user who's logged in
    */
-  home: function user() {
-    if (Meteor.user() !== undefined) {
-      FlowRouter.go('Browse_Clubs_Page');
-      // BlazeLayout.render('App_Body', { main: 'Home_Page' });
+  home: function goHome() {
+    const name = Meteor.user().profile.name;
+    if (Users.findOne({ username: name }, {}) === undefined) {
+      const newUser = { username: name };
+      Users.insert(newUser);
     }
-    return 0;
+    const temp = Users.findOne({ username: name });
+    if(temp.TOS === false) {
+      FlowRouter.go('TOS');
+    }
+    else {
+      FlowRouter.go('Browse_Clubs_Page');
+    }
+    return false;
   },
 });

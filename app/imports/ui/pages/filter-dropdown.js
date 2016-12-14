@@ -37,7 +37,7 @@ Template.Filter_Dropdown.helpers({
   },
   disable() {
     let result = 'disabled';
-    if (Meteor.user()) {
+    if (Meteor.user() && user().TOS) {
       result = '';
     }
     return result;

@@ -35,7 +35,13 @@
         {{#if disable}}
         <div class="item">
           <div class="ui warning message">
-            Please login to save preferences
+            {{#if currentUser}}
+              Please accept the
+              <a class="{{ isActiveRoute 'TOS'}}" href="{{ pathFor 'TOS' }}"> terms of service </a>
+              to save preferences
+            {{else}}
+              Please login to save preferences
+            {{/if}}
           </div>
         </div>
         {{/if}}
