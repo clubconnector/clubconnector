@@ -18,6 +18,7 @@ Template.TOS.events({
    */
   'click .decline': function declineTOS(event) {
     event.preventDefault();
+    Meteor.logout();
     FlowRouter.go('Browse_Clubs_Page');
     return false;
   },
@@ -36,6 +37,3 @@ Template.TOS.events({
     return false;
   },
 });
-
-
-
