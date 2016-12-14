@@ -1,18 +1,15 @@
+import { Meteor } from 'meteor/meteor';
 import { Users } from '../../api/users/users.js';
 import { _ } from 'meteor/underscore';
 
-/**
- this is a list of website administrators
- */
-const admins = [
-  'keanur',
-  'rfiggs',
-  'yohany',
-  'wmmb',
-];
+if (!Meteor.settings.cas) {
+  console.log('CAS settings not found! Hint: "meteor --settings ../config/settings.development.json"');
+}
+
+const admins = Meteor.settings.site_admin;
 
 _.each(admins, function addAdmins(username) {
-  if (Users.update({ username }, { $set: { siteAdmin: true } }).nMatched === 0) {
+  if (Users.update({ username }, { $set: { siteAdmin: true } }) == 0) {
     Users.insert({ username, siteAdmin: true });
   }
 });

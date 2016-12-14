@@ -48,7 +48,7 @@
                        class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton"
                        id="{{club.orgName}}"></i>
                   {{/if}}
-                  <button class="ui button">View profile</button>
+                  <a href="{{ pathFor 'Club_Page' }}/{{club._id}}" class="ui button">View profile</a>
 
                   {{#if currentUser}}
                      {{#if currentAdmin}}
