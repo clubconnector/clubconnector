@@ -3,43 +3,44 @@
   <div class="club-content-box container">
 
     <div class="ui fluid container">
-      <h1 id="club-title" class="ui club dividing header">Association for Computing Machinery at Manoa
-        (ACMANOA)</h1>
+      <!--<h1 id="club-title" class="ui club dividing header">Association for Computing Machinery at Manoa
+        (ACMANOA)</h1>-->
+      <h1 id="club-title" class="ui club dividing header">{{club.orgName}}</h1>
     </div>
 
     <img id="club-banner-image" class="ui image container" src="/images/ACM_Manoa_Wordmark.png">
 
     <div class="row">
       <h3 class="ui club dividing header">Description</h3>
-      <p class="ui club text">The student chapter of the Association for Computing Machinery at UH Manoa.</p>
+      <p class="ui club text">{{club.description}}</p>
     </div>
     <div id="club-about-grid" class="ui three column grid">
 
       <div class="column">
         <h3 class="ui club dividing header">Type</h3>
-        <div class="ui club text">Academic/Professional</div>
+        <div class="ui club text">{{club.type}}</div>
       </div>
 
       <div class="column">
         <h3 class="ui club dividing header">Contact Person</h3>
         <div class="row">
-          <h4 class="club about label">Name:</h4>
+          <h4 class="club about label">Name: {{club.contactName}}</h4>
         </div>
         <div class="row">
-          <h4 class="club about label">Email:</h4>
+          <h4 class="club about label">Email: {{club.contactEmail}}</h4>
         </div>
       </div>
 
       <div class="column">
         <h3 class="ui club dividing header">Club Communication</h3>
         <div class="row">
-          <h4 class="club about label">Email:</h4>
+          <h4 class="club about label">Email: {{club.orgEmail}}</h4>
         </div>
         <div class="row">
-          <h4 class="club about label">Website:</h4>
+          <h4 class="club about label">Website: {{club.orgWebsite}}</h4>
         </div>
         <div class="row">
-          <h4 class="club about label">Social Media:</h4>
+          <h4 class="club about label">Social Media: {{club.orgSocial}}</h4>
         </div>
       </div>
 

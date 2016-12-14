@@ -72,6 +72,13 @@ export const ClubsSchema = new SimpleSchema({
     max: 50,
     defaultValue: '/images/profile.png',
   },
+  description: {
+    label: 'description',
+    type: String,
+    optional: false,
+    max: 250,
+    defaultValue: 'Please contact this club to learn more about it',
+  },
 });
 
 Clubs.attachSchema(ClubsSchema);
