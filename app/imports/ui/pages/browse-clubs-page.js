@@ -94,7 +94,7 @@ Template.Browse_Clubs_Page.onRendered(function go() {
 
 
 Template.registerHelper('currentAdmin', function () {
-  return user().siteAdmin;
+  return Meteor.username().siteAdmin;
 });
 
 
