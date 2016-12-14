@@ -46,7 +46,7 @@ Template.Welcome.helpers({
   /**
    * @returns {String} Returns the user who's logged in
    */
-  home: function user() {
+  home: function goHome() {
     const name = Meteor.user().profile.name;
     if (Users.findOne({ username: name }, {}) === undefined) {
       const newUser = { username: name };
