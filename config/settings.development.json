@@ -11,12 +11,21 @@
       "popupHeight": 610
     }
   },
-  "allowed_users": [
-    "johnson",
-    "cmoore",
+  "site_admin": [
+    "yohany",
     "keanur",
     "rfiggs",
-    "yohany",
-    "wmmb"
+    "yosup",
+    "wmmb",
+    "jrude",
+    "milespro",
+    "ciarakah",
+    "kguinto"
+  ],
+  "site_admin": [
+    "keanur",
+    "rfiggs",
+    "wmmb",
+    "yohany"
   ]
 }
