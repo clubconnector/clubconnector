@@ -72,6 +72,13 @@ export const ClubsSchema = new SimpleSchema({
     max: 50,
     defaultValue: '/images/profile.png',
   },
+  bannerimgUrl: {
+    label: 'bannerimgUrl',
+    type: String,
+    optional: false,
+    max: 50,
+    defaultValue: '/images/header_uhm.jpg',
+  },
   description: {
     label: 'description',
     type: String,
