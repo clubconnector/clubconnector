@@ -1,4 +1,5 @@
 <template name="Browse_Clubs_Page">
+<div class="ui main-content container">
   <div class="ui grid basic container segment">
     {{#if Template.subscriptionsReady}}
       <div class="row">
@@ -60,5 +61,6 @@
     {{else}}
       {{> Loading}}
     {{/if}}
+  </div>
   </div>
 </template>
