@@ -97,7 +97,6 @@ Template.Edit_Club_Page.events({
     // Invoke clean so that newStudentData reflects what will be inserted.
     ClubsSchema.clean(updatedClub);
     // Determine validity.
-    console.log(updatedClub);
     instance.context.validate(updatedClub);
     if (instance.context.isValid()) {
       Clubs.update(FlowRouter.getParam('_id'), { $set: updatedClub });
