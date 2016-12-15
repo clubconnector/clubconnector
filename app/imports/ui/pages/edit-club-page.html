@@ -1,132 +1,138 @@
 <template name="Edit_Club_Page">
   {{#if Template.subscriptionsReady}}
     {{#if currentAdmin}}
-    <div class="ui container">
-      <form class="ui form club-data-form {{ errorClass }}">
-        <h4 class="ui dividing header">Edit Club</h4>
-        <div class="field">
-          <label>Type and Tags</label>
-          <div class="two fields">
+      <div class="ui main-content container">
+        <div class="ui container">
+          <form class="ui form club-data-form {{ errorClass }}">
+            <h4 class="ui dividing header">Edit Club</h4>
             <div class="field">
-              <div class="ui selection dropdown" id="typeDropdown">
-                <input type="hidden" name="type">
-                <i class="dropdown icon"></i>
-                <div class="default text">Type</div>
-                <div class="menu">
-                  <div class="item" data-value="Academic/Professional">Academic/Professional</div>
-                  <div class="item" data-value="Ethnic/Cultural">Ethnic/Cultural</div>
-                  <div class="item" data-value="Fraternity/Sorority">Fraternity/Sorority</div>
-                  <div class="item" data-value="Honorary Society">Honorary Society</div>
-                  <div class="item" data-value="Leisure/Recreational">Leisure/Recreational</div>
-                  <div class="item" data-value="Political">Political</div>
-                  <div class="item" data-value="Religious/Spiritual">Religious/Spiritual</div>
-                  <div class="item" data-value="Service">Service</div>
-                  <div class="item" data-value="Sports/Leisure">Sports/Leisure</div>
-                  <div class="item" data-value="Student Affairs">Student Affairs</div>
+              <label>Type and Tags</label>
+              <div class="two fields">
+                <div class="field">
+                  <div class="ui selection dropdown" id="typeDropdown">
+                    <input type="hidden" name="type">
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Type</div>
+                    <div class="menu">
+                      <div class="item" data-value="Academic/Professional">Academic/Professional</div>
+                      <div class="item" data-value="Ethnic/Cultural">Ethnic/Cultural</div>
+                      <div class="item" data-value="Fraternity/Sorority">Fraternity/Sorority</div>
+                      <div class="item" data-value="Honorary Society">Honorary Society</div>
+                      <div class="item" data-value="Leisure/Recreational">Leisure/Recreational</div>
+                      <div class="item" data-value="Political">Political</div>
+                      <div class="item" data-value="Religious/Spiritual">Religious/Spiritual</div>
+                      <div class="item" data-value="Service">Service</div>
+                      <div class="item" data-value="Sports/Leisure">Sports/Leisure</div>
+                      <div class="item" data-value="Student Affairs">Student Affairs</div>
+                    </div>
+                  </div>
+                  {{#if displayFieldError 'type' }}
+                    <div class="ui error message">
+                      <p>You must specify the club type.</p>
+                    </div>
+                  {{/if}}
+                </div>
+                <div class="field">
+                  <div class="ui multiple search selection dropdown" id="tagsDropdown">
+                    <input name="filters" type="hidden" id="tags">
+                    <div class="default text">Add Tags...</div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                      {{#each tag in tagsList}}
+                        <div class="item" data-value="{{tag.name}}">{{tag.name}}</div>
+                      {{/each}}
+                    </div>
+                  </div>
                 </div>
               </div>
-              {{#if displayFieldError 'type' }}
-                <div class="ui error message">
-                  <p>You must specify the club type.</p>
-                </div>
-              {{/if}}
             </div>
             <div class="field">
-              <div class="ui multiple search selection dropdown" id="tagsDropdown">
-                <input name="filters" type="hidden" id="tags">
-                <div class="default text">Add Tags...</div>
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                  {{#each tag in tagsList}}
-                    <div class="item" data-value="{{tag.name}}">{{tag.name}}</div>
-                  {{/each}}
+              <label>Name and Acronym</label>
+              <div class="two fields">
+                <div class="field">
+                  <input type="text" name="orgName" id="orgName" placeholder="Name of Organization"
+                         value="{{club.orgName}}">
+                  {{#if displayFieldError 'orgName' }}
+                    <div class="ui error message">
+                      <p>You must specify the club name.</p>
+                    </div>
+                  {{/if}}
+                </div>
+                <div class="field">
+                  <input type="text" name="acronym" id="acronym" placeholder="Acronym" value="{{club.acronym}}">
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="field">
-          <label>Name and Acronym</label>
-          <div class="two fields">
+
             <div class="field">
-              <input type="text" name="orgName" id="orgName" placeholder="Name of Organization"
-                     value="{{club.orgName}}">
-              {{#if displayFieldError 'orgName' }}
-                <div class="ui error message">
-                  <p>You must specify the club name.</p>
+              <label>Contact Person</label>
+              <div class="two fields">
+                <div class="field">
+                  <input type="text" name="contactName" id="contactName" placeholder="Name"
+                         value="{{club.contactName}}">
+                  {{#if displayFieldError 'contactName' }}
+                    <div class="ui error message">
+                      <p>You must specify the contact person's name.</p>
+                    </div>
+                  {{/if}}
                 </div>
-              {{/if}}
-            </div>
-            <div class="field">
-              <input type="text" name="acronym" id="acronym" placeholder="Acronym" value="{{club.acronym}}">
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>Contact Person</label>
-          <div class="two fields">
-            <div class="field">
-              <input type="text" name="contactName" id="contactName" placeholder="Name" value="{{club.contactName}}">
-              {{#if displayFieldError 'contactName' }}
-                <div class="ui error message">
-                  <p>You must specify the contact person's name.</p>
+                <div class="field">
+                  <input type="text" name="contactEmail" id="contactEmail" placeholder="Email"
+                         value="{{club.contactEmail}}">
+                  {{#if displayFieldError 'contactEmail' }}
+                    <div class="ui error message">
+                      <p>You must specify the contact person's email.</p>
+                    </div>
+                  {{/if}}
                 </div>
-              {{/if}}
+              </div>
             </div>
+
             <div class="field">
-              <input type="text" name="contactEmail" id="contactEmail" placeholder="Email"
-                     value="{{club.contactEmail}}">
-              {{#if displayFieldError 'contactEmail' }}
-                <div class="ui error message">
-                  <p>You must specify the contact person's email.</p>
+              <label>Club Email, Website, & Social Media</label>
+              <div class="three fields">
+                <div class="field">
+                  <input type="text" name="orgEmail" id="orgEmail" placeholder="Email" value="{{club.orgEmail}}">
                 </div>
-              {{/if}}
+                <div class="field">
+                  <input type="text" name="orgWebsite" id="orgWebsite" placeholder="Website"
+                         value="{{club.orgWebsite}}">
+                </div>
+                <div class="field">
+                  <input type="text" name="orgSocial" id="orgSocial" placeholder="Social Media"
+                         value="{{club.orgSocial}}">
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div class="field">
-          <label>Club Email, Website, & Social Media</label>
-          <div class="three fields">
             <div class="field">
-              <input type="text" name="orgEmail" id="orgEmail" placeholder="Email" value="{{club.orgEmail}}">
+              <label>Club Images</label>
+              <div class="two fields">
+                <div class="field">
+                  <input type="text" name="imgUrl" id="imgUrl" placeholder="Card Image" value="{{club.imgUrl}}">
+                </div>
+                <div class="field">
+                  <input type="text" name="bannerimgUrl" id="bannerimgUrl" placeholder="Banner Image"
+                         value="{{club.bannerimgUrl}}">
+                </div>
+              </div>
             </div>
             <div class="field">
-              <input type="text" name="orgWebsite" id="orgWebsite" placeholder="Website" value="{{club.orgWebsite}}">
+              <label>Club Description</label>
+              <div class="field">
+                <textarea name="description" id="description" placeholder="Description"
+                          value="{{club.description}}"></textarea>
+              </div>
             </div>
-            <div class="field">
-              <input type="text" name="orgSocial" id="orgSocial" placeholder="Social Media" value="{{club.orgSocial}}">
-            </div>
-          </div>
-        </div>
 
-        <div class="field">
-          <label>Club Images</label>
-          <div class="two fields">
-            <div class="field">
-              <input type="text" name="imgUrl" id="imgUrl" placeholder="Card Image" value="{{club.imgUrl}}">
-            </div>
-            <div class="field">
-              <input type="text" name="bannerimgUrl" id="bannerimgUrl" placeholder="Banner Image"
-                     value="{{club.bannerimgUrl}}">
-            </div>
-          </div>
-        </div>
-        <div class="field">
-          <label>Club Description</label>
-            <div class="field">
-              <textarea name="description" id="description" placeholder="Description" value="{{club.description}}"></textarea>
-            </div>
-        </div>
+            <button class="ui button" type="submit">Update</button>
+            <button class="ui button delete" type="submit">Delete</button>
 
-        <button class="ui button" type="submit">Update</button>
-        <button class="ui button delete" type="submit">Delete</button>
-
-      </form>
-    </div>
+          </form>
+        </div>
+      </div>
     {{else}}
-    {{> App_Not_Found}}
+      {{> App_Not_Found}}
     {{/if}}
   {{/if}}
 </template>

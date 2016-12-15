@@ -53,8 +53,8 @@ img.resize{
 }
 
 form.ui.form.club-data-form {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .ui.celled.table {
@@ -224,6 +224,7 @@ form.ui.form.club-data-form {
 
 .ui.vertical.stripe{
   padding: 4em 0em;
+  background-color:#FFFFFF;
 }
 
 .ui.vertical.stripe h3{
@@ -239,4 +240,19 @@ form.ui.form.club-data-form {
   margin: 0em 0em !important;
   box-shadow: none !important;
   padding: 1rem 1rem !important;
+}
+
+#__blaze-root {
+  background-color: #012700;
+}
+
+.ui.main-content.container {
+  background-color: white;
+  margin: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#club-page-main {
+  padding: 0; !important
 }
