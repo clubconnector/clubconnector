@@ -59,11 +59,10 @@ Template.Cas_Login.helpers({
   userStatus() {
     if (Meteor.user()) {
       return 'cas-logout';
-    }
-      else {
+    } else {
       return 'cas-login';
     }
-  }
+  },
 });
 
 Template.Cas_Login.onCreated(function onCreated() {
