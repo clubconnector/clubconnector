@@ -1,11 +1,13 @@
 <template name="Cas_Login">
   <button class="ui inverted button {{userStatus}}" id="#loginButton">
     {{#if currentUser}}
+    {{user}}
+    |
     Logout
     {{else}}
     Login
     {{/if}}
-    <!--<i class="dropdown icon"></i>
+   <!-- <i class="dropdown icon"></i>
     <div class="menu">
       {{#if currentUser}}
       <a class="ui item cas-logout">Logout</a>
