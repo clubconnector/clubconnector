@@ -141,7 +141,6 @@ const clubSeeds = [
  */
 // this is to make sure that these values update each time the server refreshes
 // remove on production
-Clubs.remove({});
 if (Clubs.find().count() === 0) {
   _.each(clubSeeds, function seedContacts(club) {
     Clubs.insert(club);
