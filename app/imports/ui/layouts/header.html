@@ -1,31 +1,35 @@
 <template name="Header">
 
-  <div id="topmenu" class="ui borderless topmenu menu">
+  <!--<div id="topmenu" class="ui borderless topmenu menu">
 
     <div class="ui container">
       <a class="item" href="{{pathFor 'Browse_Clubs_Page'}}">
         <img class="ui image item"
              src="/images/uhm_title_small.png">
       </a>
-      <!--<div class="right menu">
+      &lt;!&ndash;<div class="right menu">
         <div class="item">
           <div class="ui icon input">
             <input type="text" placeholder="Search for a club">
             <i class="search link icon"></i>
           </div>
         </div>
-      </div>-->
+      </div>&ndash;&gt;
     </div>
-  </div>
-
-  <div id="menu" class="ui inverted stackable github borderless menu">
-    <div class="ui container">
-      <a class="ui header item" href="{{pathFor 'Browse_Clubs_Page'}}"><h1>ClubConnector</h1></a>
-      <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse
-        Clubs</a>
-      <!-- <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">View Club</a>-->
-      {{#if currentUser}}
-      <a class="{{ isActiveRoute 'Add_Club_Page'}} ui item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
+  </div>-->
+  <!-- <div class="ui large secondary inverted pointing menu">
+    <a class="active item">ClubConnector</a>
+    <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
+    <div class="right item">
+      <div class="cas-login ui inverted button">Login</div>
+    </div>
+  </div>-->
+  <div class="ui container">
+    <div class="ui large secondary inverted pointing menu">
+      <a class="item" href="{{pathFor 'Browse_Clubs_Page'}}">ClubConnector</a>
+      <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
+      {{#if currentAdmin}}
+        <a class="{{ isActiveRoute 'Add_Club_Page'}} item" href="{{ pathFor 'Add_Club_Page' }}">Add Club</a>
       {{/if}}
       <div class="ui right item">{{> Cas_Login }}</div>
     </div>
