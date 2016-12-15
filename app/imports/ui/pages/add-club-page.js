@@ -3,12 +3,20 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Clubs, ClubsSchema } from '../../api/clubs/clubs.js';
+import { Tags } from '../../api/tags/tags.js';
 
 /* eslint-disable no-param-reassign */
 
 const displayErrorMessages = 'displayErrorMessages';
 
+function tagsList(){
+  return Tags.find();
+}
+
 Template.Add_Club_Page.onCreated(function onCreated() {
+  this.autorun(() => {
+    this.subscribe('Tags');
+  });
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displayErrorMessages, false);
   this.context = ClubsSchema.namedContext('Add_Club_Page');
@@ -22,15 +30,17 @@ Template.Add_Club_Page.helpers({
     const errorKeys = Template.instance().context.invalidKeys();
     return _.find(errorKeys, (keyObj) => keyObj.name === fieldName);
   },
+  tagsList,
 });
 
 Template.Add_Club_Page.onRendered(function enableSemantic() {
   const instance = this;
-  instance.$('select.ui.dropdown').dropdown();
-  instance.$('.ui.selection.dropdown').dropdown();
-  instance.$('select.dropdown').dropdown();
-  instance.$('.ui.checkbox').checkbox();
-  instance.$('.ui.radio.checkbox').checkbox();
+  this.subscribe('Tags', () => {
+    Tracker.afterFlush(() => {
+      instance.$('#typeDropdown.ui.selection.dropdown').dropdown({});
+      instance.$('#tagsDropdown.ui.selection.dropdown').dropdown({});
+    });
+  });
 });
 
 Template.Add_Club_Page.events({
@@ -45,8 +55,12 @@ Template.Add_Club_Page.events({
     const orgEmail = event.target.orgEmail.value;
     const orgWebsite = event.target.orgWebsite.value;
     const orgSocial = event.target.orgSocial.value;
-
-    const newClub = { type, orgName, acronym, contactName, contactEmail, orgEmail, orgWebsite, orgSocial };
+    const tags = event.target.tags.value.split(',');
+    const imgUrl = event.target.imgUrl.value;
+    const bannerimgUrl = event.target.bannerimgUrl.value;
+    const description = event.target.description.value;
+    const newClub = { type, orgName, acronym, contactName, contactEmail, orgEmail, orgWebsite, orgSocial,
+      tags, imgUrl, bannerimgUrl, description };
     // Clear out any old validation errors.
     instance.context.resetValidation();
     // Invoke clean so that newClub reflects what will be inserted.

@@ -1,5 +1,6 @@
 <template name="Edit_Club_Page">
   {{#if Template.subscriptionsReady}}
+    {{#if currentAdmin}}
     <div class="ui container">
       <form class="ui form club-data-form {{ errorClass }}">
         <h4 class="ui dividing header">Edit Club</h4>
@@ -23,12 +24,12 @@
                   <div class="item" data-value="Sports/Leisure">Sports/Leisure</div>
                   <div class="item" data-value="Student Affairs">Student Affairs</div>
                 </div>
-                {{#if displayFieldError 'type' }}
-                  <div class="ui error message">
-                    <p>You must specify the club type.</p>
-                  </div>
-                {{/if}}
               </div>
+              {{#if displayFieldError 'type' }}
+                <div class="ui error message">
+                  <p>You must specify the club type.</p>
+                </div>
+              {{/if}}
             </div>
             <div class="field">
               <div class="ui multiple search selection dropdown" id="tagsDropdown">
@@ -124,5 +125,8 @@
 
       </form>
     </div>
+    {{else}}
+    {{> App_Not_Found}}
+    {{/if}}
   {{/if}}
 </template>

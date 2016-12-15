@@ -2,43 +2,91 @@
   {{#if currentUser}}
   {{ home }}
   {{/if}}
-  <div style="
-  background-image: url('/images/background.jpg');
-  background-repeat: no-repeat;
-  background-size:contain;
-  width: 100%;
-  height: 0;
-  position: absolute;
-  padding-top: 56.25%">
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="active item">ClubConnector</a>
+        <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
+        <div class="right item">
+          <div class="cas-login ui inverted button">Login</div>
+        </div>
+      </div>
+    </div>
+    <div class="ui text container">
+      <h1 class="ui inverted header">ClubConnector</h1>
+      <h2>Connect with UH Manoa's clubs!</h2>
+      <div class="cas-login ui huge primary button">
+        Start Now
+        <i class="right arrow icon"></i>
+      </div>
+    </div>
   </div>
-  <div class="top">
-    <div style="min-height: 700px;" class="ui vertical center aligned segment">
-      <div style="margin-top: 4em; font-size: 4em;" class="ui centered text container">
-        <div class="ui text container"><h1 style="color: #FFFFFF; font-size: 3em;"
-                                           class="ui huge header">WELCOME TO CLUBCONNECTOR</h1></div>
-        <h3 style="color: #FFFFFF" class="ui fitted header">THE PLACE WHERE YOU CAN CONNECT WITH UH MANOA'S 200+
-          CLUBS</h3>
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="eight wide column">
+          <h3 class="ui header">About ClubConnector</h3>
+          <p>A huge part of the college experience is being joining clubs and being active in campus life.
+            ClubConnector gives you a simple and easy way to manage all your favorite clubs!</p>
+          <h3 class="ui header">The Team</h3>
+          <div class="ui four column doubling grid container">
+            <div class="column">
+              <div class="ui card">
+                <a class="image" href="https://rfiggs.github.io/">
+                  <img src="https://rfiggs.github.io/images/bobby.jpg">
+                </a>
+                <div class="content">
+                  <a class="header" href="https://rfiggs.github.io/">Robert Figgs</a>
+                  <div class="meta">
+                    <p>Student</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui card">
+                <a class="image" href="http://keanur.github.io/">
+                  <img src="https://keanur.github.io/images/IMG_2753.jpg">
+                </a>
+                <div class="content">
+                  <a class="header" href="http://keanur.github.io/">Keanu Robles</a>
+                  <div class="meta">
+                    <p>Help Desk Consultant</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui card">
+                <a class="image" href="https://wyattbartlett.github.io/">
+                  <img src="https://wyattbartlett.github.io/images/MyFaceSquare.JPG">
+                </a>
+                <div class="content">
+                  <a class="header" href="https://wyattbartlett.github.io/">Wyatt Bartlett</a>
+                  <div class="meta">
+                    <p>Student</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="ui card">
+                <a class="image" href="https://yohanyang.github.io/">
+                  <img src="https://yohanyang.github.io/images/profile.jpg">
+                </a>
+                <div class="content">
+                  <a class="header" href="https://yohanyang.github.io/">Yohan Yang</a>
+                  <div class="meta">
+                    <p>Student</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="text container">
-          <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} ui huge button" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
-          <div class="ui huge button cas-login">Login</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="bottom" style="min-height: 400px;">
-    <div class="ui three column grid container">
-      <div class="column"></div>
-      <div class="column">
-        <div style="font-size: xx-large; text-align: center; padding-top: 70px">
-          <p>About ClubConnector</p></div>
-        <div class="text" style="text-align: center; text-space: 4px; padding-top: 15px;">A huge part of the college
-          experience is being joining clubs and being active in campus life. ClubConnector gives you a simple and easy
-          way to manage all your favorite clubs!
-        </div>
-      </div>
-      <div class="column"></div>
-    </div>
-  </div>
 </template>
 

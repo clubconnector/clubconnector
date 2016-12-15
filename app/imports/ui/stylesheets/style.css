@@ -189,3 +189,54 @@ form.ui.form.club-data-form {
 .tos{
   background-color: #012700;
 }
+
+.pusher{
+  background-color: white;
+}
+
+.masthead.segment{
+  min-height: 700px;
+}
+
+.ui.secondary.inverted.menu{
+  border-color: #012700;
+  background-color: #012700;
+}
+
+.ui.inverted.vertical.masthead.center.aligned.segment{
+  background-color: #012700;
+}
+
+.ui.inverted.button{
+  background: transparent;
+}
+
+.ui.text.container{
+  font-size: 1.14285714rem;
+}
+
+.masthead h1.ui.header{
+  margin-top: 3em;
+  margin-bottom: 0em;
+  font-size: 4em;
+  font-weight: normal;
+}
+
+.ui.vertical.stripe{
+  padding: 4em 0em;
+}
+
+.ui.vertical.stripe h3{
+  font-size: 2em;
+}
+
+.ui.vertical.stripe p{
+  font-size: 1.33em;
+}
+
+.ui.stackable.grid > .row > .wide.column, .ui.stackable.grid > .wide.column, .ui.stackable.grid > .column.grid > .column, .ui.stackable.grid > .column.row > .column, .ui.stackable.grid > .row > .column, .ui.stackable.grid > .column:not(.row), .ui.grid > .stackable.stackable.row > .column {
+  width: 100% !important;
+  margin: 0em 0em !important;
+  box-shadow: none !important;
+  padding: 1rem 1rem !important;
+}
