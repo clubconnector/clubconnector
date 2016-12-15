@@ -74,21 +74,18 @@ export const ClubsSchema = new SimpleSchema({
     label: 'imgUrl',
     type: String,
     optional: true,
-    max: 50,
     defaultValue: '/images/profile.png',
   },
   bannerimgUrl: {
     label: 'bannerimgUrl',
     type: String,
     optional: true,
-    max: 50,
     defaultValue: '/images/header_uhm.jpg',
   },
   description: {
     label: 'description',
     type: String,
     optional: true,
-    max: 500,
     defaultValue: 'Please contact this club to learn more about it',
   },
 });
