@@ -44,9 +44,9 @@ Template.Cas_Login.events({
 
 // Here's how to do the required initialization for Semantic UI dropdown menus.
 Template.Cas_Login.onRendered(function enableDropDown() {
-  this.$('#accountDropdown.dropdown').dropdown({
+  /*this.$('#accountDropdown.dropdown').dropdown({
     action: 'select',
-  });
+  });*/
 });
 
 Template.Cas_Login.helpers({
@@ -56,6 +56,14 @@ Template.Cas_Login.helpers({
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
+  userStatus() {
+    if (Meteor.user()) {
+      return 'cas-logout';
+    }
+      else {
+      return 'cas-login';
+    }
+  }
 });
 
 Template.Cas_Login.onCreated(function onCreated() {
