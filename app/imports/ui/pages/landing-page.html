@@ -1,14 +1,17 @@
 <template name="Welcome" xmlns="http://www.w3.org/1999/html">
-  {{#if currentUser}}
-  {{ home }}
-  {{/if}}
   <div class="ui inverted vertical masthead center aligned segment">
     <div class="ui container">
       <div class="ui large secondary inverted pointing menu">
         <a class="active item">ClubConnector</a>
         <a class="{{ isActiveRoute 'Browse_Clubs_Page'}} item" href="{{ pathFor 'Browse_Clubs_Page' }}">Browse</a>
         <div class="right item">
-          <div class="cas-login ui inverted button">Login</div>
+          <div class="{{userStatus}} ui inverted button">
+            {{#if currentUser}}
+              Logout
+            {{else}}
+              Login
+            {{/if}}
+          </div>
         </div>
       </div>
     </div>
