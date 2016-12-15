@@ -21,6 +21,17 @@ const clubSeeds = [
     tags: ['Art'],
     imgUrl: '/images/CR.jpg',
   },
+  {
+    type: 'Academic/Professional',
+    orgName: 'American Society of Civil Engineers',
+    acronym: '',
+    contactName: 'Lauren Ho',
+    contactEmail: 'laurenm6@hawaii.edu',
+    orgEmail: 'asce@hawaii.edu',
+    orgWebsite: 'asceuhm.weeebly.com',
+    orgSocial: 'Facebook: ASCE',
+    tags: ['Engineering'],
+  },
     // Ethnic/Cultural
   {
     type: 'Ethnic/Cultural',
@@ -33,6 +44,18 @@ const clubSeeds = [
     orgSocial: 'Facebook: IslamicSocietyatUH',
     tags: ['International'],
   },
+  {
+    type: 'Ethnic/Cultural',
+    orgName: 'Korean Student Association',
+    acronym: '',
+    contactName: 'Sungha John Jun',
+    contactEmail: 'sjjun@hawaii.edu',
+    orgEmail: 'uhmkso@gmail.com',
+    orgWebsite: '',
+    orgSocial: 'Facebook: Korean Student Association at UHM',
+    tags: ['International'],
+  },
+
     // Fraternity/Sorority
   {
     type: 'Fraternity/Sorority',
@@ -44,6 +67,17 @@ const clubSeeds = [
     orgWebsite: 'hawaii.alphagammadelta.org',
     orgSocial: 'Facebook: Alpha Gamma Delta Hawaii',
     tags: ['Fraternity'],
+  },
+  {
+    type: 'Psi Chi',
+    orgName: 'Alpha Gamma Delta',
+    acronym: '',
+    contactName: 'Emily Badillo',
+    contactEmail: 'ebadillo@hawaii.edu',
+    orgEmail: 'psichi@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: '',
+    tags: ['Fraternity, Sorority'],
   },
     // Honorary Society
   {
@@ -69,9 +103,19 @@ const clubSeeds = [
     orgSocial: 'Facebook: TADA UHM',
     tags: ['Art', 'Music'],
     imgUrl: '/images/DC.jpg',
-
   },
-    //
+  {
+    type: 'Leisure/Recreational',
+    orgName: 'League of Legends Club at UH Manoa',
+    acronym: '',
+    contactName: 'Eric Ucol',
+    contactEmail: 'lolcub@hawaii.edu',
+    orgEmail: 'lolclub@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: 'Facebook: TADA UHM',
+    tags: ['Art', 'Music'],
+  },
+    // Political
   {
     type: 'Political',
     orgName: 'Student Alliance for Animals',
@@ -83,7 +127,17 @@ const clubSeeds = [
     orgSocial: 'Facebook: safa at uh manoa',
     tags: ['Outdoors'],
     imgUrl: '/images/AM.jpg',
-
+  },
+  {
+    type: 'Political',
+    orgName: 'Young Americans for Liberty',
+    acronym: '',
+    contactName: 'Maggie Hinshaw',
+    contactEmail: 'maggieh@hawaii.edu',
+    orgEmail: 'yalatuhm@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: 'Facebook: Young Americans for Liberty at University of Hawaii at Manoa',
+    tags: ['Outdoors'],
   },
     // Religious/Spiritual
   {
@@ -109,7 +163,29 @@ const clubSeeds = [
     orgSocial: 'Facebook: facebook.com/alohathon.uhm',
     tags: ['Service'],
   },
+  {
+    type: 'Service',
+    orgName: 'That Sandwich Club',
+    acronym: '',
+    contactName: 'Paul Santiago',
+    contactEmail: 'rprs@hawaii.edu',
+    orgEmail: 'thatsandwichclub@gmail.com',
+    orgWebsite: '',
+    orgSocial: 'Facebook: That Sandwich Club',
+    tags: ['Service'],
+  },
     // Sports/Leisure
+  {
+    type: 'Sports/Leisure',
+    orgName: 'Manoa Martial Arts Coalition',
+    acronym: '',
+    contactName: 'Peter Chong Jian Li',
+    contactEmail: 'petercjl@hawaii.edu',
+    orgEmail: 'mmac@hawaii.edu',
+    orgWebsite: '',
+    orgSocial: '',
+    tags: ['Sports'],
+  },
   {
     type: 'Sports/Leisure',
     orgName: 'Aikido @ UHM',

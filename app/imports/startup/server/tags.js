@@ -22,6 +22,9 @@ const tagsSeeds = [
     name: 'International',
   },
   {
+    name: 'Engineering',
+  },
+  {
     name: 'Music',
   },
   {
