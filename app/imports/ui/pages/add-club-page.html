@@ -1,5 +1,6 @@
 <template name="Add_Club_Page">
   {{#if Template.subscriptionsReady}}
+    {{#if currentAdmin}}
     <div class="ui container">
       <form class="ui form club-data-form {{ errorClass }}">
         <h4 class="ui dividing header">Add Club</h4>
@@ -120,5 +121,8 @@
 
       </form>
     </div>
+    {{else}}
+    {{> App_Not_Found}}
+    {{/if}}
   {{/if}}
 </template>
