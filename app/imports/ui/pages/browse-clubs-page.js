@@ -6,13 +6,17 @@ import { Users } from '../../api/users/users.js';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
 
+
 const dict = new ReactiveDict();
 dict.set('filters', '');
 dict.set('search', '');
 dict.set('favOnly', false);
 
 function user() {
-  return Users.findOne({ username: Meteor.user().profile.name }, {});
+  if (Meteor.user()) {
+    return Users.findOne({ username: Meteor.user().profile.name }, {});
+  }
+  return false;
 }
 
 function isFavorite(clubname) {
@@ -93,5 +97,5 @@ Template.Browse_Clubs_Page.onRendered(function go() {
 
 
 Template.registerHelper('currentAdmin', function () {
-  return (Meteor.user()) ? user().siteAdmin : false;
+  return (user()) ? user().siteAdmin : false;
 });
