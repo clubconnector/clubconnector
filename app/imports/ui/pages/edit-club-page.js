@@ -106,7 +106,6 @@ Template.Edit_Club_Page.events({
     } else {
       instance.messageFlags.set(displayErrorMessages, true);
     }
-    console.log(Template.instance().context.invalidKeys());
   },
 
   'click .delete'(event, instance) {

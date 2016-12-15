@@ -23,12 +23,12 @@
                   <div class="item" data-value="Sports/Leisure">Sports/Leisure</div>
                   <div class="item" data-value="Student Affairs">Student Affairs</div>
                 </div>
-                {{#if displayFieldError 'type' }}
-                  <div class="ui error message">
-                    <p>You must specify the club type.</p>
-                  </div>
-                {{/if}}
               </div>
+              {{#if displayFieldError 'type' }}
+                <div class="ui error message">
+                  <p>You must specify the club type.</p>
+                </div>
+              {{/if}}
             </div>
             <div class="field">
               <div class="ui multiple search selection dropdown" id="tagsDropdown">
