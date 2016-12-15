@@ -1,10 +1,7 @@
 <template name="Browse_Clubs_Page">
   <div class="ui grid basic container segment">
-
-
     {{#if Template.subscriptionsReady}}
       <div class="row">
-
         {{> Filter_Dropdown}}
       </div>
       <div class="ui row">
@@ -49,47 +46,19 @@
                        id="{{club.orgName}}"></i>
                   {{/if}}
                   <a href="{{ pathFor 'Club_Page' }}/{{club._id}}" class="ui button">View profile</a>
-
                   {{#if currentUser}}
                      {{#if currentAdmin}}
                   <a class="{{ isActiveRoute 'Edit_Club_Page'}} ui item" href="{{ pathFor 'Edit_Club_Page' }}/{{club._id}}">Edit</a>
-                 <!-- /
-                  <a class="{{ isActiveRoute 'Admin_Club_Page'}} ui item" href="{{ pathFor 'Admin_Club_Page' }}">Delete</a>-->
                      {{/if}}
                   {{/if}}
                 </div>
-
-                <!--
-              </div>
-              <div class ="ui bottom attached segment">
-                {{#if currentUser}}
-                <i title="Favorite" class="ui right floated link large {{markFavorite club.orgName}} star icon favoriteButton" id="{{club.orgName}}"></i>
-                {{/if}}
-                <a class="{{ isActiveRoute 'Club_Page'}} ui button" href="{{ pathFor 'Club_Page' }}">View profile</a>
-                {{#if siteAdmin}}
-                <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">Edit</a>
-                /
-                <a class="{{ isActiveRoute 'Club_Page'}} ui item" href="{{ pathFor 'Club_Page' }}">Delete</a>
-
-                  {{/if}}
-              </div>
-            </div>
-          </div>
-        {{/each}}
-
-      </div>
-</div>
--->
               </div>
             </div>
           {{/each}}
         </div>
       </div>
-
-
     {{else}}
       {{> Loading}}
     {{/if}}
-
   </div>
 </template>
